@@ -59,10 +59,11 @@
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
                 <li class="active"><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="matches.html" class="nav-link">Matches</a></li>
-                <li><a href="players.html" class="nav-link">Players</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="matches.html" class="nav-link">Players</a></li>
+                <li><a href="players.html" class="nav-link">Clubs</a></li>
+                <li><a href="blog.html" class="nav-link">Goods</a></li>
+                <li><a href="contact.html" class="nav-link">Ticketing</a></li>
+                <li><a href="contact.html" class="nav-link">Matches</a></li>
               </ul>
             </nav>
 
@@ -78,12 +79,12 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-5 ml-auto">
-            <h1 class="text-white">World Cup Event</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, molestias repudiandae pariatur.</p>
-            <div id="date-countdown"></div>
+            <h1 class="text-white">English Premier League</h1>
+            <p>This is a website that provides EPL information.</p>
+            
             <p>
-              <a href="#" class="btn btn-primary py-3 px-4 mr-3">Book Ticket</a>
-              <a href="#" class="more light">Learn More</a>
+              <a href="#" class="btn btn-primary py-3 px-4 mr-3">Login</a>
+              <a href="#" class="more light">Sign up</a>
             </p>  
           </div>
         </div>
@@ -99,11 +100,11 @@
         <div class="col-lg-12">
           
           <div class="d-flex team-vs">
-            <span class="score">4-1</span>
+            <span class="score">1-1</span>
             <div class="team-1 w-50">
               <div class="team-details w-100 text-center">
                 <img src="images/logo_1.png" alt="Image" class="img-fluid">
-                <h3>LA LEGA <span>(win)</span></h3>
+                <h3>MAN CITY <span></span></h3>
                 <ul class="list-unstyled">
                   <li>Anja Landry (7)</li>
                   <li>Eadie Salinas (12)</li>
@@ -115,7 +116,7 @@
             <div class="team-2 w-50">
               <div class="team-details w-100 text-center">
                 <img src="images/logo_2.png" alt="Image" class="img-fluid">
-                <h3>JUVENDU <span>(loss)</span></h3>
+                <h3>LIVERPOOL<span></span></h3>
                 <ul class="list-unstyled">
                   <li>Macauly Green (3)</li>
                   <li>Arham Stark (8)</li>
@@ -130,81 +131,8 @@
     </div>
   
 
-    <div class="latest-news">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 title-section">
-            <h2 class="heading">Latest News</h2>
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-md-4">
-            <div class="post-entry">
-              <a href="#">
-                <img src="images/img_1.jpg" alt="Image" class="img-fluid">
-              </a>
-              <div class="caption">
-                <div class="caption-inner">
-                  <h3 class="mb-3">Romolu to stay at Real Nadrid?</h3>
-                  <div class="author d-flex align-items-center">
-                    <div class="img mb-2 mr-3">
-                      <img src="images/person_1.jpg" alt="">
-                    </div>
-                    <div class="text">
-                      <h4>Mellissa Allison</h4>
-                      <span>May 19, 2020 &bullet; Sports</span>
-                    </div>
-                  </div>
-                </div>
-              </div> 
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="post-entry">
-              <a href="#">
-                <img src="images/img_3.jpg" alt="Image" class="img-fluid">
-              </a>
-              <div class="caption">
-                <div class="caption-inner">
-                  <h3 class="mb-3">Kai Nets Double To Secure Comfortable Away Win</h3>
-                  <div class="author d-flex align-items-center">
-                    <div class="img mb-2 mr-3">
-                      <img src="images/person_1.jpg" alt="">
-                    </div>
-                    <div class="text">
-                      <h4>Mellissa Allison</h4>
-                      <span>May 19, 2020 &bullet; Sports</span>
-                    </div>
-                  </div>
-                </div>
-              </div> 
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="post-entry">
-              <a href="#">
-                <img src="images/img_2.jpg" alt="Image" class="img-fluid">
-              </a>
-              <div class="caption">
-                <div class="caption-inner">
-                  <h3 class="mb-3">Dogba set for Juvendu return?</h3>
-                  <div class="author d-flex align-items-center">
-                    <div class="img mb-2 mr-3">
-                      <img src="images/person_1.jpg" alt="">
-                    </div>
-                    <div class="text">
-                      <h4>Mellissa Allison</h4>
-                      <span>May 19, 2020 &bullet; Sports</span>
-                    </div>
-                  </div>
-                </div>
-              </div> 
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
+   
+          
     
     <div class="site-section bg-dark">
       <div class="container">
@@ -261,67 +189,67 @@
                 <tbody>
                   <tr>
                     <td>1</td>
-                    <td><strong class="text-white">Football League</strong></td>
+                    <td><strong class="text-white">Leicester City</strong></td>
                     <td>22</td>
                     <td>3</td>
                     <td>2</td>
-                    <td>140</td>
+                    <td>18</td>
                   </tr>
                   <tr>
                     <td>2</td>
-                    <td><strong class="text-white">Soccer</strong></td>
+                    <td><strong class="text-white">Tottenham Spurs</strong></td>
                     <td>22</td>
                     <td>3</td>
                     <td>2</td>
-                    <td>140</td>
+                    <td>17</td>
                   </tr>
                   <tr>
                     <td>3</td>
-                    <td><strong class="text-white">Juvendo</strong></td>
+                    <td><strong class="text-white">Liverpool</strong></td>
                     <td>22</td>
                     <td>3</td>
                     <td>2</td>
-                    <td>140</td>
+                    <td>17</td>
                   </tr>
                   <tr>
                     <td>4</td>
-                    <td><strong class="text-white">French Football League</strong></td>
+                    <td><strong class="text-white">Southampton</strong></td>
                     <td>22</td>
                     <td>3</td>
                     <td>2</td>
-                    <td>140</td>
+                    <td>16</td>
                   </tr>
                   <tr>
                     <td>5</td>
-                    <td><strong class="text-white">Legia Abante</strong></td>
+                    <td><strong class="text-white">Chelsea</strong></td>
                     <td>22</td>
                     <td>3</td>
                     <td>2</td>
-                    <td>140</td>
+                    <td>15</td>
                   </tr>
                   <tr>
                     <td>6</td>
-                    <td><strong class="text-white">Gliwice League</strong></td>
+                    <td><strong class="text-white">Aston Villa</strong></td>
                     <td>22</td>
                     <td>3</td>
                     <td>2</td>
-                    <td>140</td>
+                    <td>15</td>
                   </tr>
                   <tr>
                     <td>7</td>
-                    <td><strong class="text-white">Cornika</strong></td>
+                    <td><strong class="text-white">Everton</strong></td>
                     <td>22</td>
                     <td>3</td>
                     <td>2</td>
-                    <td>140</td>
+                    <td>13</td>
                   </tr>
                   <tr>
                     <td>8</td>
-                    <td><strong class="text-white">Gravity Smash</strong></td>
+                    <td><strong class="text-white">Crystal Palace</strong></td>
                     <td>22</td>
                     <td>3</td>
                     <td>2</td>
-                    <td>140</td>
+                    <td>13</td>
                   </tr>
                 </tbody>
               </table>
@@ -332,143 +260,7 @@
       </div>
     </div> <!-- .site-section -->
 
-    <div class="site-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-6 title-section">
-            <h2 class="heading">Videos</h2>
-          </div>
-          <div class="col-6 text-right">
-            <div class="custom-nav">
-            <a href="#" class="js-custom-prev-v2"><span class="icon-keyboard_arrow_left"></span></a>
-            <span></span>
-            <a href="#" class="js-custom-next-v2"><span class="icon-keyboard_arrow_right"></span></a>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="owl-4-slider owl-carousel">
-          <div class="item">
-            <div class="video-media">
-              <img src="images/img_1.jpg" alt="Image" class="img-fluid">
-              <a href="https://vimeo.com/139714818" class="d-flex play-button align-items-center" data-fancybox>
-                <span class="icon mr-3">
-                  <span class="icon-play"></span>
-                </span>
-                <div class="caption">
-                  <h3 class="m-0">Dogba set for Juvendu return?</h3>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="video-media">
-              <img src="images/img_2.jpg" alt="Image" class="img-fluid">
-              <a href="https://vimeo.com/139714818" class="d-flex play-button align-items-center" data-fancybox>
-                <span class="icon mr-3">
-                  <span class="icon-play"></span>
-                </span>
-                <div class="caption">
-                  <h3 class="m-0">Kai Nets Double To Secure Comfortable Away Win</h3>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="video-media">
-              <img src="images/img_3.jpg" alt="Image" class="img-fluid">
-              <a href="https://vimeo.com/139714818" class="d-flex play-button align-items-center" data-fancybox>
-                <span class="icon mr-3">
-                  <span class="icon-play"></span>
-                </span>
-                <div class="caption">
-                  <h3 class="m-0">Romolu to stay at Real Nadrid?</h3>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="video-media">
-              <img src="images/img_1.jpg" alt="Image" class="img-fluid">
-              <a href="https://vimeo.com/139714818" class="d-flex play-button align-items-center" data-fancybox>
-                <span class="icon mr-3">
-                  <span class="icon-play"></span>
-                </span>
-                <div class="caption">
-                  <h3 class="m-0">Dogba set for Juvendu return?</h3>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="video-media">
-              <img src="images/img_2.jpg" alt="Image" class="img-fluid">
-              <a href="https://vimeo.com/139714818" class="d-flex play-button align-items-center" data-fancybox>
-                <span class="icon mr-3">
-                  <span class="icon-play"></span>
-                </span>
-                <div class="caption">
-                  <h3 class="m-0">Kai Nets Double To Secure Comfortable Away Win</h3>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="video-media">
-              <img src="images/img_3.jpg" alt="Image" class="img-fluid">
-              <a href="https://vimeo.com/139714818" class="d-flex play-button align-items-center" data-fancybox>
-                <span class="icon mr-3">
-                  <span class="icon-play"></span>
-                </span>
-                <div class="caption">
-                  <h3 class="m-0">Romolu to stay at Real Nadrid?</h3>
-                </div>
-              </a>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-
-    <div class="container site-section">
-      <div class="row">
-        <div class="col-6 title-section">
-          <h2 class="heading">Our Blog</h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="custom-media d-flex">
-            <div class="img mr-4">
-              <img src="images/img_1.jpg" alt="Image" class="img-fluid">
-            </div>
-            <div class="text">
-              <span class="meta">May 20, 2020</span>
-              <h3 class="mb-4"><a href="#">Romolu to stay at Real Nadrid?</a></h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus deserunt saepe tempora dolorem.</p>
-              <p><a href="#">Read more</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="custom-media d-flex">
-            <div class="img mr-4">
-              <img src="images/img_3.jpg" alt="Image" class="img-fluid">
-            </div>
-            <div class="text">
-              <span class="meta">May 20, 2020</span>
-              <h3 class="mb-4"><a href="#">Romolu to stay at Real Nadrid?</a></h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus deserunt saepe tempora dolorem.</p>
-              <p><a href="#">Read more</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    
 
 
 
