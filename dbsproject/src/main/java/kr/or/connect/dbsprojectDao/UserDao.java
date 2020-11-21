@@ -10,7 +10,7 @@ import java.util.List;
 import kr.or.connect.dbsprojectDto.User;
 
 public class UserDao {
-	private static String dburl = "jdbc:mysql://ec2-15-164-94-56.ap-northeast-2.compute.amazonaws.com:3306/kjh";
+	private static String dburl = "jdbc:mysql://ec2-15-164-94-56.ap-northeast-2.compute.amazonaws.com:3306/KJHDB";
 	private static String dbUser = "Kimjuhyun";
 	private static String dbpasswd = "juhyun123";
 	public List<User> getUser() {
