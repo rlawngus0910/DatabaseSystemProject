@@ -24,6 +24,7 @@ public class JoinAction extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html;charset=utf-8");
 		String id = request.getParameter("userID");
 		String password = request.getParameter("userPassword");
 		String name = request.getParameter("userName");
@@ -39,6 +40,7 @@ public class JoinAction extends HttpServlet {
 		int result = dao.join(user);
 		if(result == -1) {
 			PrintWriter script = response.getWriter();
+			
 			script.println("<script>");
 			script.println("alert('이미 존재하는 아이디입니다.')");
 			script.println("history.back()");
@@ -48,8 +50,8 @@ public class JoinAction extends HttpServlet {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("alert('회원가입이 완료되었습니다.')");
+			script.println("location.href = 'main.jsp'");
 			script.println("</script>");
-			response.sendRedirect("main.jsp");
 		}
 		
 	}

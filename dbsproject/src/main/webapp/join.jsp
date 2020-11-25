@@ -51,7 +51,7 @@
 
             <!-- content-->
             <div id="content">
-                <form id="join-form" method="post" action="http://localhost:8080/JoinAction">
+                <form id="join-form" method="post" action="http://localhost:8080/dbsproject/JoinAction">
                 <!-- ID -->
                 <div>
                     <h3 class="join_title">

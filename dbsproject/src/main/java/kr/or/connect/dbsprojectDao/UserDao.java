@@ -10,7 +10,7 @@ import java.util.List;
 import kr.or.connect.dbsprojectDto.User;
 
 public class UserDao {
-	private static String dburl = "jdbc:mysql://ec2-15-164-94-56.ap-northeast-2.compute.amazonaws.com:3306/KJHDB";
+	private static String dburl = "jdbc:mysql://ec2-15-164-94-56.ap-northeast-2.compute.amazonaws.com:3306/KJHDB?useUnicode=true&characterEncoding=utf8";
 	private static String dbUser = "Kimjuhyun";
 	private static String dbpasswd = "juhyun123";
 	Connection conn = null;
@@ -64,17 +64,18 @@ public class UserDao {
 	}
 	
 	public int join(User user) {
+		int result = 0;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
-			String sql = "SELECT ID FROM user";
+			String sql = "INSERT INTO user VALUES (?,?,?,?,?)";
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, user.getID());
 			ps.setString(2, user.getPW());
 			ps.setString(3, user.getNAME());
 			ps.setString(4, user.getEMAIL());
 			ps.setString(5, user.getBIRTH());
-			return ps.executeUpdate();
+			result = ps.executeUpdate();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -100,7 +101,8 @@ public class UserDao {
 				}
 			}
 		}
-		return -1;
+		if(result > 0) return 1;
+		else return -1;
 	}
 	
 }

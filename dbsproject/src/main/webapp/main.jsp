@@ -111,14 +111,14 @@
               <h4 class="modal-title">Login</h4>
             </div>
             <div class="d-flex flex-column text-center">
-              <form>
+              <form id="login-form" method="post" action="http://localhost:8080/dbsproject/LoginAction">
                 <div class="form-group">
-                  <input type="email" class="modal-input" id="email1"placeholder="Your email address...">
+                  <input type="email" class="modal-input" id="email1" name="userID" placeholder="Your ID..." required>
                 </div>
                 <div class="form-group">
-                  <input type="password" class="modal-input" id="password1" placeholder="Your password...">
+                  <input type="password" class="modal-input" id="password1" name="userPassword" placeholder="Your password..." required>
                 </div>
-                <button type="button" class="btn btn-info btn-block btn-round">Login</button>
+                <button type="submit" class="btn btn-info btn-block btn-round">Login</button>
               </form>
               <div class="modal-footer d-flex justify-content-center">
                 <div class="signup-section">Not a member yet? <a href="#a" class="text-info"> Sign Up</a>.<br>
