@@ -18,6 +18,16 @@ public class User {
 		
 	}
 
+	public User(String iD, String pW, String nAME, String eMAIL, String bIRTH) {
+		super();
+		ID = iD;
+		PW = pW;
+		NAME = nAME;
+		EMAIL = eMAIL;
+		BIRTH = bIRTH;
+	}
+
+
 	public String getID() {
 		return ID;
 	}
