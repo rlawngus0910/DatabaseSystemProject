@@ -91,7 +91,7 @@
             
             <p>
               <button type="button" class="btn btn-primary py-3 px-4 mr-3" data-toggle="modal" data-target="#loginModal">Login</button>
-              <a href="#" class="more light">Sign up</a>
+              <a href="join.jsp" class="more light">Sign up</a>
             </p>  
           </div>
         </div>
