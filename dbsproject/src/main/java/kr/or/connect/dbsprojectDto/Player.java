@@ -7,18 +7,26 @@ public class Player {
 	private String POSITION;
 	private String BIRTH;
 	private Integer CLUB;
-	private String BACKNO;
-	private Integer PHOTO;
+	private Integer BACKNO;
+	private String PHOTO;
 	
 	public Player() {
 		
 	}
 	
-	public Player(Integer playerid) {
+	
+	public Player(Integer playerid, String name, String nation, String position, String birth, Integer club, Integer backno, String photo) {
 		super();
 		this.playerID = playerid;
-		
+		this.NAME = name; 
+		this.NATION = nation;
+		this.POSITION = position;
+		this.BIRTH = birth;
+		this.CLUB = club;
+		this.BACKNO = backno;
+		this.PHOTO = photo;
 	}
+	
 	
 	
 	public Integer getPlayerID() {
@@ -57,16 +65,16 @@ public class Player {
 	public void setCLUB(Integer cLUB) {
 		CLUB = cLUB;
 	}
-	public String getBACKNO() {
+	public Integer getBACKNO() {
 		return BACKNO;
 	}
-	public void setBACKNO(String bACKNO) {
+	public void setBACKNO(Integer bACKNO) {
 		BACKNO = bACKNO;
 	}
-	public Integer getPHOTO() {
+	public String getPHOTO() {
 		return PHOTO;
 	}
-	public void setPHOTO(Integer pHOTO) {
+	public void setPHOTO(String pHOTO) {
 		PHOTO = pHOTO;
 	}
 	

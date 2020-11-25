@@ -23,16 +23,25 @@ public class PlayerDao {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
-			String sql = "SELECT playerID FROM player";
+			String sql = "SELECT * FROM player";
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
 			
 			while(rs.next()) {
+				
 				Integer playerID = rs.getInt(1);
-				player = new Player(playerID);
+				String name = rs.getString(2);
+				String nation = rs.getString(3);
+				String position = rs.getString(4);
+				String birth = rs.getString(5);
+				Integer club = rs.getInt(6);
+				Integer backno = rs.getInt(7);
+				String photo = rs.getString(8);
+				player = new Player(playerID, name, nation, position,birth, club, backno, photo);
 				list.add(player);
-			
+				
 			}
+			
 			
 		}catch(Exception e) {
 			e.printStackTrace();

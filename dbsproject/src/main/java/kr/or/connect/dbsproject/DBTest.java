@@ -11,7 +11,14 @@ public class DBTest {
 		PlayerDao dao = new PlayerDao();
 		List<Player> list = dao.getPlayer();
 		for(Player player : list) {
-			System.out.println(player.getPlayerID());
-		}
+			System.out.print(player.getPlayerID()+" ");
+			System.out.print(player.getNAME()+" ");
+			System.out.print(player.getNATION()+" ");
+			System.out.print(player.getPOSITION()+" ");
+			System.out.print(player.getBIRTH()+" ");
+			System.out.print(player.getCLUB()+" ");
+			System.out.print(player.getBACKNO()+" ");
+			System.out.println(player.getPHOTO());
+			}
 	}
 }
