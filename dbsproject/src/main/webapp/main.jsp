@@ -9,7 +9,9 @@
 
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
+  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css'>
+  
   <link rel="stylesheet" href="fonts/icomoon/style.css">
 
   <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
@@ -27,12 +29,23 @@
   <link rel="stylesheet" href="css/aos.css">
 
   <link rel="stylesheet" href="css/style.css">
+  
+  <!--로그인 폼 css-->
+  <link rel="stylesheet" href="css/demo.css">
+
+  <link rel="stylesheet" href="css/style2.css">
 
 
 
 </head>
 
 <body>
+<%
+    String userID = null;
+    if(session.getAttribute("userID") != null){
+        userID = (String) session.getAttribute("userID");
+    }
+%>
 
   <div class="site-wrap">
 
@@ -81,17 +94,60 @@
           <div class="col-lg-5 ml-auto">
             <h1 class="text-white">English Premier League</h1>
             <p>This is a website that provides EPL information.</p>
-            
+            <%  
+                if(userID == null) { 
+            %>
             <p>
-              <a href="#" class="btn btn-primary py-3 px-4 mr-3">Login</a>
-              <a href="#" class="more light">Sign up</a>
+              <button type="button" class="btn btn-primary py-3 px-4 mr-3" data-toggle="modal" data-target="#loginModal">Login</button>
+              <a href="join.jsp" class="more light">Sign up</a>
             </p>  
+            <%
+                }else{
+            %>
+            <p>
+              <button type="button" class="btn btn-primary py-3 px-4 mr-3" data-toggle="modal" data-target="#loginModal">Logout</button>
+              <a href="join.jsp" class="more light">Mypage</a>
+            </p>
+            <%
+            	}
+            %>
+            
           </div>
         </div>
       </div>
     </div>
 
-    
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header border-bottom-0">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-title text-center">
+              <h4 class="modal-title">Login</h4>
+            </div>
+            <div class="d-flex flex-column text-center">
+              <form id="login-form" method="post" action="http://localhost:8080/dbsproject/LoginAction">
+                <div class="form-group">
+                  <input type="text" class="modal-input" id="email1" name="userID" placeholder="Your ID..." required>
+                </div>
+                <div class="form-group">
+                  <input type="password" class="modal-input" id="password1" name="userPassword" placeholder="Your password..." required>
+                </div>
+                <button type="submit" class="btn btn-info btn-block btn-round">Login</button>
+              </form>
+              <div class="modal-footer d-flex justify-content-center">
+                <div class="signup-section">Not a member yet? <a href="join.jsp" class="text-info"> Sign Up</a>.<br>
+                Forgot ID?<a href="#a" class="text-info"> Find ID</a>.</div>
+              </div>            
+            </div>
+          </div>
+        </div>          
+      </div>
+    </div>
     
     <div class="container">
       
