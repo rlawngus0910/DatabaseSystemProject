@@ -4,7 +4,7 @@
 <html>
 <head>
         <meta charset="UTF-8">
-        <title>네이버 : 회원가입</title>
+        <title>Sign Up</title>
         <link rel="stylesheet" href="css/new_main.css">
 
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
@@ -51,15 +51,14 @@
 
             <!-- content-->
             <div id="content">
-                <form action="">
-
+                <form id="join-form" method="post" action="">
                 <!-- ID -->
                 <div>
                     <h3 class="join_title">
                         <label for="id">아이디</label>
                     </h3>
                     <span class="box int_id">
-                        <input type="text" id="id" class="int" maxlength="20">
+                        <input type="text" id="id" name="userID" class="int" maxlength="20" required>
                         
                     </span>
                     <span class="error_next_box"></span>
@@ -80,7 +79,7 @@
                 <div>
                     <h3 class="join_title"><label for="pswd2">비밀번호 재확인</label></h3>
                     <span class="box int_pass_check">
-                        <input type="password" id="pswd2" class="int" maxlength="20">
+                        <input type="password" id="pswd2" name="userPassword" class="int" maxlength="20">
                         <img src="images/m_icon_check_disable.png" id="pswd2_img1" class="pswdImg">
                     </span>
                     <span class="error_next_box"></span>
@@ -90,7 +89,7 @@
                 <div>
                     <h3 class="join_title"><label for="name">이름</label></h3>
                     <span class="box int_name">
-                        <input type="text" id="name" class="int" maxlength="20">
+                        <input type="text" id="name" name="userName" class="int" maxlength="20">
                     </span>
                     <span class="error_next_box"></span>
                 </div>
@@ -103,14 +102,14 @@
                         <!-- BIRTH_YY -->
                         <div id="bir_yy">
                             <span class="box">
-                                <input type="text" id="yy" class="int" maxlength="4" placeholder="년(4자)">
+                                <input type="text" id="yy" class="int" name="userBirthYear" maxlength="4" placeholder="년(4자)">
                             </span>
                         </div>
 
                         <!-- BIRTH_MM -->
                         <div id="bir_mm">
                             <span class="box">
-                                <select id="mm" class="sel">
+                                <select id="mm" name="userBirthMonth" class="sel">
                                     <option>월</option>
                                     <option value="01">1</option>
                                     <option value="02">2</option>
@@ -131,7 +130,7 @@
                         <!-- BIRTH_DD -->
                         <div id="bir_dd">
                             <span class="box">
-                                <input type="text" id="dd" class="int" maxlength="2" placeholder="일">
+                                <input type="text" id="dd" class="int" name="userBirthDay" maxlength="2" placeholder="일">
                             </span>
                         </div>
 
@@ -144,14 +143,14 @@
                 <div>
                     <h3 class="join_title"><label for="email">이메일</label></h3>
                     <span class="box int_email">
-                        <input type="text" id="email" class="int" maxlength="100" placeholder="선택입력">
+                        <input type="text" id="email" class="int" name="userEmail" maxlength="100" placeholder="선택입력">
                     </span>
                     <span class="error_next_box">이메일 주소를 다시 확인해주세요.</span>    
                 </div>
 
                 <!-- JOIN BTN-->
                 <div class="btn_area">
-                    <button type="button" id="btnJoin">
+                    <button type="submit" id="btnJoin">
                         <span>가입하기</span>
                     </button>
                 </div>
