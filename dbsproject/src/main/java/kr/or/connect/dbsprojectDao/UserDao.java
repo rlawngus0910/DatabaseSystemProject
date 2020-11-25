@@ -63,6 +63,50 @@ public class UserDao {
 		return list;
 	}
 	
+	public int login(String userID, String userPassword) {
+		int result = -1;
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
+			String sql = "SELECT PW FROM user WHERE ID = ?";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, userID);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				if(rs.getString(1).contentEquals(userPassword))
+					result = 1;  // 로그인 성공
+				else
+					result = 0; // 비밀번호 불일치
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(rs!=null) {
+				try {
+					rs.close();
+				}catch(SQLException e) {
+					result = -2;
+					e.printStackTrace();
+				}
+			}
+			if(ps!=null) {
+				try {
+					ps.close();
+				}catch(SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if(conn!=null) {
+				try {
+					conn.close();
+				}catch(SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return result;
+	}
+	
 	public int join(User user) {
 		int result = 0;
 		try {
