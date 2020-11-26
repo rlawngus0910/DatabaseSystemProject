@@ -1,7 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@ page import="kr.or.connect.dbsprojectDto.Player" %>
+<%@ page import="kr.or.connect.dbsprojectDao.PlayerDao" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
+<%
+	String pageNumber = "1";
+	if (request.getParameter("pageNumber") != null){
+		pageNumber = request.getParameter("pageNumber");
+	}
+	List<Player> playerlist = new PlayerDao().getPlayer(pageNumber);
+%>
 <head>
   <title>Soccer &mdash; Website by Colorlib</title>
   <meta charset="utf-8">
@@ -52,17 +62,18 @@
         <div class="d-flex align-items-center">
           <div class="site-logo">
             <a href="index.html">
-              <img src="images/logo.png" alt="Logo">
+              <img src="images/Premier_League-Logo.wine.png" alt="Logo">
             </a>
           </div>
           <div class="ml-auto">
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="matches.html" class="nav-link">Matches</a></li>
-                <li class="active"><a href="players.html" class="nav-link">Players</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="active"><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="matches.html" class="nav-link">Players</a></li>
+                <li><a href="players.html" class="nav-link">Clubs</a></li>
+                <li><a href="blog.html" class="nav-link">Goods</a></li>
+                <li><a href="contact.html" class="nav-link">Ticketing</a></li>
+                <li><a href="contact.html" class="nav-link">Matches</a></li>
               </ul>
             </nav>
 
@@ -71,7 +82,6 @@
           </div>
         </div>
       </div>
-
     </header>
 
     <div class="hero overlay" style="background-image: url('images/bg_3.jpg');">
@@ -84,116 +94,92 @@
         </div>
       </div>
     </div>
-
     
-    
-    <div class="site-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-6 title-section">
-            <h2 class="heading">Star Players / Videos</h2>
-          </div>
-          <div class="col-6 text-right">
-            <div class="custom-nav">
-            <a href="#" class="js-custom-prev-v2"><span class="icon-keyboard_arrow_left"></span></a>
-            <span></span>
-            <a href="#" class="js-custom-next-v2"><span class="icon-keyboard_arrow_right"></span></a>
-            </div>
-          </div>
-        </div>
+    <div class="container2">
+    <table class="table table-bordered table-hover" style="text-align: center;border: 1px solid #dddddd;margin-left: auto;margin-right: auto;width: 1500px;">
+      <thead>
+        <tr>
+          <th colspan="7"><h4>Player</h4></th>
+        </tr>
+        <tr>
+          <th style="background-color: #fafafa; color: #000000; width:150px">사진</th>
+          <th style="background-color: #fafafa; color: #000000;">이름</th>
+          <th style="background-color: #fafafa; color: #000000; width:100px">포지션</th>
+          <th style="background-color: #fafafa; color: #000000;">팀</th>
+          <th style="background-color: #fafafa; color: #000000; width:100px">등번호</th>
+          <th style="background-color: #fafafa; color: #000000; width:100px">국적</th>
+          <th style="background-color: #fafafa; color: #000000; width:150px">생년월일</th>
+        </tr>
 
-
-        <div class="owl-4-slider owl-carousel">
-          <div class="item">
-            <div class="video-media">
-              <img src="images/img_1.jpg" alt="Image" class="img-fluid">
-              <a href="https://vimeo.com/139714818" class="d-flex play-button align-items-center" data-fancybox>
-                <span class="icon mr-3">
-                  <span class="icon-play"></span>
-                </span>
-                <div class="caption">
-                  <span class="meta">#10 / Forward</span>
-                  <h3 class="m-0">Phillip Hobbs</h3>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="video-media">
-              <img src="images/img_2.jpg" alt="Image" class="img-fluid">
-              <a href="https://vimeo.com/139714818" class="d-flex play-button align-items-center" data-fancybox>
-                <span class="icon mr-3">
-                  <span class="icon-play"></span>
-                </span>
-                <div class="caption">
-                  <span class="meta">#7 / Forward</span>
-                  <h3 class="m-0">Garry Norris</h3>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="video-media">
-              <img src="images/img_3.jpg" alt="Image" class="img-fluid">
-              <a href="https://vimeo.com/139714818" class="d-flex play-button align-items-center" data-fancybox>
-                <span class="icon mr-3">
-                  <span class="icon-play"></span>
-                </span>
-                <div class="caption">
-                  <span class="meta">#4 / Forward</span>
-                  <h3 class="m-0">Romolu Harper</h3>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="video-media">
-              <img src="images/img_1.jpg" alt="Image" class="img-fluid">
-              <a href="https://vimeo.com/139714818" class="d-flex play-button align-items-center" data-fancybox>
-                <span class="icon mr-3">
-                  <span class="icon-play"></span>
-                </span>
-                <div class="caption">
-                  <span class="meta">#4 / Forward</span>
-                  <h3 class="m-0">Phillip Hobbs</h3>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="video-media">
-              <img src="images/img_2.jpg" alt="Image" class="img-fluid">
-              <a href="https://vimeo.com/139714818" class="d-flex play-button align-items-center" data-fancybox>
-                <span class="icon mr-3">
-                  <span class="icon-play"></span>
-                </span>
-                <div class="caption">
-                  <span class="meta">#1 / GoalKeeper</span>
-                  <h3 class="m-0">Garry Norris</h3>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="video-media">
-              <img src="images/img_3.jpg" alt="Image" class="img-fluid">
-              <a href="https://vimeo.com/139714818" class="d-flex play-button align-items-center" data-fancybox>
-                <span class="icon mr-3">
-                  <span class="icon-play"></span>
-                </span>
-                <div class="caption">
-                  <span class="meta">#8 / Forward</span>
-                  <h3 class="m-0">Romolu Harper</h3>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
+      </thead>
+      <tbody>
+      <%
+      	  for(int i = 0;i < playerlist.size();i++){
+      		  Player player = playerlist.get(i);
+      	  
+      %>
+        <tr>
+        	<td><%= player.getPHOTO() %></td>
+        	<td><%= player.getNAME() %></td>
+        	<td><%= player.getPOSITION() %></td>
+        	<td><%= player.getCLUB() %></td>
+        	<td><%= player.getBACKNO() %></td>
+        	<td><%= player.getBACKNO() %></td>
+        	<td><%= player.getBIRTH() %></td>
+        </tr>
+      <%
+      	 }
+      %>
+        <tr>
+        	<td colspan=7>
+        		<ul class="pagination" style="margin: 0 auto;">
+        		<%
+        			int startPage = (Integer.parseInt(pageNumber) / 10) * 10 + 1;
+        			if(Integer.parseInt(pageNumber) % 10 == 0) startPage -= 10;
+        			int targetPage = new PlayerDao().targetPage(pageNumber);
+        			if(startPage != 1) {
+        		%>
+        		<li><a href="players.jsp?pageNumber=<%= startPage - 1 %>"><span>next</span></a>
+        		<%
+        			} else {
+        		%>
+        		<li><span class="glyphicon glyphicon-chevron-left" style="color: gray;"></span></li>
+        		
+        		<%
+        			}
+        			for(int i = startPage; i < Integer.parseInt(pageNumber) ; i++) {
+        		%>
+        		<li><a href="players.jsp?pageNumber=<%= i %>"><%= i %></a></li>
+        		
+        		<%
+        			}
+        		%>
+        		<li class="active"><a href="players.jsp?pageNumber=<%= pageNumber %>"><%= pageNumber %></a></li>
+        		<%
+        			for(int i = Integer.parseInt(pageNumber) + 1; i <= targetPage + Integer.parseInt(pageNumber); i++) {
+        				if(i < startPage + 10) {
+        		%>
+        		<li><a href="players.jsp?pageNumber=<%= i %>"><%= i %></a></li>
+        		<%
+        				}
+        			}
+        		    if(targetPage + Integer.parseInt(pageNumber) > startPage + 9) {
+        		%>
+        		<li><a href="players.jsp?pageNumber=<%= startPage + 10 %>"><%= startPage + 10 %><span>next</span></a></li>
+        		<%
+        		    } else {
+        		%>
+        		<li><span class="glyphicon glyphicon-chevron-right"></span></li>
+        		<%
+        		
+        		    }
+        		%>
+        		</ul>
+        	</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
     
     <div class="container site-section">
