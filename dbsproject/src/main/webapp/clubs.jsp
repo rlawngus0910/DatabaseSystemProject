@@ -86,8 +86,16 @@
 			</div>
 		</header>
 
-		<div class="hero overlay"
-			style="background-image: url('images/bg_3.jpg');"></div>
+		<div class="hero overlay" style="background-image: url('images/bg_3.jpg');">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-5 mx-auto text-center">
+            <h1 class="text-white">CLUBS</h1>
+            <p>Introduce EPL clubs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
 		<div class="container2">
 			<table class="table table-bordered table-hover"
@@ -97,27 +105,26 @@
 						<th colspan="7"><h4>Club</h4></th>
 					</tr>
 					<tr>
-						<th
-							style="background-color: #fafafa; color: #000000; width: 150px">사진</th>
-						<th style="background-color: #fafafa; color: #000000;">구단 이름</th>
-						<th
-							style="background-color: #fafafa; color: #000000; width: 100px">감독</th>
+						<th style="background-color: #fafafa; color: #000000; ">사진</th>
+						<th style="background-color: #fafafa; color: #000000; width :250px">구단 이름</th>
+						<th style="background-color: #fafafa; color: #000000; width: 250px">감독</th>
 						<th style="background-color: #fafafa; color: #000000;">스타디움</th>
-						<th
-							style="background-color: #fafafa; color: #000000; width: 100px">창립년도</th>
+						<th style="background-color: #fafafa; color: #000000; width: 100px">창립년도</th>
 					</tr>
 				<tbody>
 					<%
       	  for(int i = 0;i < clublist.size();i++){
       		  Club club = clublist.get(i);
      				 %>
-					<tr style = "color: white";>
+					<tr style = "color: white";>	
 						<td><%= club.getCLUBPHOTO() %></td>
 						<td><%= club.getNAME() %></td>
 						<td><%= club.getMANAGER() %></td>
 						<td><%= club.getHOMESTADIUM() %></td>
 						<td><%= club.getFOUNDINGYEAR() %></td>
 					</tr>
+					
+					
 					  <%
       	 }
       %>
