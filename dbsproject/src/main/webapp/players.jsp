@@ -107,7 +107,7 @@
           <th style="background-color: #fafafa; color: #000000; width:100px">포지션</th>
           <th style="background-color: #fafafa; color: #000000;">팀</th>
           <th style="background-color: #fafafa; color: #000000; width:100px">등번호</th>
-          <th style="background-color: #fafafa; color: #000000; width:100px">국적</th>
+          <th style="background-color: #fafafa; color: #000000;">국적</th>
           <th style="background-color: #fafafa; color: #000000; width:150px">생년월일</th>
         </tr>
 
