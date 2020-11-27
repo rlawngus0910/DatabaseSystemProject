@@ -37,7 +37,6 @@ public class ClubDao {
 				String clubphoto = rs.getString(6);
 				
 				
-				
 				club = new Club(clubID, name, manager, homestadium, foundingyear, clubphoto);
 				list.add(club);
 				
