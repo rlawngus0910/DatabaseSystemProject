@@ -95,12 +95,13 @@
       </div>
     </div>
     
+    <form class="form-search" style="margin: 35px">
+    	<input type="text" name="search" class="input-medium search-query" size="50" style="border-radius: 35px"/>
+    	<button type="submit" class="btn">Search</button>
+    </form>
     <div class="container2">
     <table class="table table-bordered table-hover" style="text-align: center;border: 1px solid #dddddd;margin-left: auto;margin-right: auto;width: 1500px;">
       <thead>
-        <tr>
-          <th colspan="7"><h4>Player</h4></th>
-        </tr>
         <tr>
           <th style="background-color: #fafafa; color: #000000; width:150px">사진</th>
           <th style="background-color: #fafafa; color: #000000;">이름</th>

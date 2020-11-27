@@ -157,4 +157,59 @@ public class PlayerDao {
 		}
 		return 0;
 	}
+	
+	public List<Player> searchList (String searchtext){
+		List<Player> list = new ArrayList<>();
+		Player player = null;
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		String sql = "SELECT A.playerID, A.NAME, A.NATION, A.POSITION, A.BIRTH, B.NAME, A.BACKNO, A.PHOTO FROM player AS A LEFT JOIN club AS B ON A.CLUB = B.clubID WHERE A.NAME LIKE ?";
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
+			ps = conn.prepareStatement(sql);
+		    ps.setString(1, "%" + searchtext + "%");
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				Integer playerID = rs.getInt(1);
+				String name = rs.getString(2);
+				String nation = rs.getString(3);
+				String position = rs.getString(4);
+				String birth = rs.getString(5);
+				String club = rs.getString(6);
+				Integer backno = rs.getInt(7);
+				String photo = rs.getString(8);
+				player = new Player(playerID, name, nation, position,birth, club, backno, photo);
+				list.add(player);
+				
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(rs!=null) {
+				try {
+					rs.close();
+				}catch(SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if(ps!=null) {
+				try {
+					ps.close();
+				}catch(SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if(conn!=null) {
+				try {
+					conn.close();
+				}catch(SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return list;
+		
+	}
 }
