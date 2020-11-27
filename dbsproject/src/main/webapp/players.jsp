@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <%@ page import="kr.or.connect.dbsprojectDto.Player" %>
 <%@ page import="kr.or.connect.dbsprojectDao.PlayerDao" %>
 <%@ page import="java.util.List" %>
@@ -102,13 +102,13 @@
           <th colspan="7"><h4>Player</h4></th>
         </tr>
         <tr>
-          <th style="background-color: #fafafa; color: #000000; width:150px">»çÁø</th>
-          <th style="background-color: #fafafa; color: #000000;">ÀÌ¸§</th>
-          <th style="background-color: #fafafa; color: #000000; width:100px">Æ÷Áö¼Ç</th>
-          <th style="background-color: #fafafa; color: #000000;">ÆÀ</th>
-          <th style="background-color: #fafafa; color: #000000; width:100px">µî¹øÈ£</th>
-          <th style="background-color: #fafafa; color: #000000; width:100px">±¹Àû</th>
-          <th style="background-color: #fafafa; color: #000000; width:150px">»ý³â¿ùÀÏ</th>
+          <th style="background-color: #fafafa; color: #000000; width:150px">ì‚¬ì§„</th>
+          <th style="background-color: #fafafa; color: #000000;">ì´ë¦„</th>
+          <th style="background-color: #fafafa; color: #000000; width:100px">í¬ì§€ì…˜</th>
+          <th style="background-color: #fafafa; color: #000000;">íŒ€</th>
+          <th style="background-color: #fafafa; color: #000000; width:100px">ë“±ë²ˆí˜¸</th>
+          <th style="background-color: #fafafa; color: #000000; width:100px">êµ­ì </th>
+          <th style="background-color: #fafafa; color: #000000; width:150px">ìƒë…„ì›”ì¼</th>
         </tr>
 
       </thead>
@@ -124,7 +124,7 @@
         	<td><%= player.getPOSITION() %></td>
         	<td><%= player.getCLUB() %></td>
         	<td><%= player.getBACKNO() %></td>
-        	<td><%= player.getBACKNO() %></td>
+        	<td><%= player.getNATION() %></td>
         	<td><%= player.getBIRTH() %></td>
         </tr>
       <%
@@ -132,14 +132,14 @@
       %>
         <tr>
         	<td colspan=7>
-        		<ul class="pagination" style="margin: 0 auto;">
+        		<ul class="pagination" style="margin: 0 auto;padding-left: 40%;">
         		<%
         			int startPage = (Integer.parseInt(pageNumber) / 10) * 10 + 1;
         			if(Integer.parseInt(pageNumber) % 10 == 0) startPage -= 10;
         			int targetPage = new PlayerDao().targetPage(pageNumber);
         			if(startPage != 1) {
         		%>
-        		<li><a href="players.jsp?pageNumber=<%= startPage - 1 %>"><span>next</span></a>
+        		<li style="padding-right:15px;"><a href="players.jsp?pageNumber=<%= startPage - 1 %>"><span><%= "<" %></span></a>
         		<%
         			} else {
         		%>
@@ -149,23 +149,23 @@
         			}
         			for(int i = startPage; i < Integer.parseInt(pageNumber) ; i++) {
         		%>
-        		<li><a href="players.jsp?pageNumber=<%= i %>"><%= i %></a></li>
+        		<li style="padding-right:15px;"><a href="players.jsp?pageNumber=<%= i %>"><%= i %></a></li>
         		
         		<%
         			}
         		%>
-        		<li class="active"><a href="players.jsp?pageNumber=<%= pageNumber %>"><%= pageNumber %></a></li>
+        		<li style="padding-right:15px;" class="active"><a href="players.jsp?pageNumber=<%= pageNumber %>"><%= pageNumber %></a></li>
         		<%
         			for(int i = Integer.parseInt(pageNumber) + 1; i <= targetPage + Integer.parseInt(pageNumber); i++) {
         				if(i < startPage + 10) {
         		%>
-        		<li><a href="players.jsp?pageNumber=<%= i %>"><%= i %></a></li>
+        		<li style="padding-right:15px;"><a href="players.jsp?pageNumber=<%= i %>"><%= i %></a></li>
         		<%
         				}
         			}
         		    if(targetPage + Integer.parseInt(pageNumber) > startPage + 9) {
         		%>
-        		<li><a href="players.jsp?pageNumber=<%= startPage + 10 %>"><%= startPage + 10 %><span>next</span></a></li>
+        		<li style="padding-right:15px;"><a href="players.jsp?pageNumber=<%= startPage + 10 %>"><%= ">" %></a></li>
         		<%
         		    } else {
         		%>

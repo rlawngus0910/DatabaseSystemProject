@@ -23,7 +23,7 @@ public class PlayerDao {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
-			String sql = "SELECT * FROM player WHERE playerID >= ? AND playerID <= ?";
+			String sql = "SELECT A.playerID, A.NAME, A.NATION, A.POSITION, A.BIRTH, B.NAME, A.BACKNO, A.PHOTO FROM player AS A LEFT JOIN club AS B on A.CLUB = B.clubID WHERE playerID >= ? AND playerID <= ?";
 			ps = conn.prepareStatement(sql);
 			ps.setInt(1,20 * (Integer.parseInt(pageNumber) - 1));
 			ps.setInt(2,(20 * (Integer.parseInt(pageNumber) - 1)) + 19);
@@ -36,7 +36,7 @@ public class PlayerDao {
 				String nation = rs.getString(3);
 				String position = rs.getString(4);
 				String birth = rs.getString(5);
-				Integer club = rs.getInt(6);
+				String club = rs.getString(6);
 				Integer backno = rs.getInt(7);
 				String photo = rs.getString(8);
 				player = new Player(playerID, name, nation, position,birth, club, backno, photo);

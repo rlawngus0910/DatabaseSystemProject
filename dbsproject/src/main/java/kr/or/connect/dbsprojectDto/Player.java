@@ -6,7 +6,7 @@ public class Player {
 	private String NATION;
 	private String POSITION;
 	private String BIRTH;
-	private Integer CLUB;
+	private String CLUB;
 	private Integer BACKNO;
 	private String PHOTO;
 	
@@ -15,7 +15,7 @@ public class Player {
 	}
 	
 	
-	public Player(Integer playerid, String name, String nation, String position, String birth, Integer club, Integer backno, String photo) {
+	public Player(Integer playerid, String name, String nation, String position, String birth, String club, Integer backno, String photo) {
 		super();
 		this.playerID = playerid;
 		this.NAME = name; 
@@ -59,10 +59,10 @@ public class Player {
 	public void setBIRTH(String bIRTH) {
 		BIRTH = bIRTH;
 	}
-	public Integer getCLUB() {
+	public String getCLUB() {
 		return CLUB;
 	}
-	public void setCLUB(Integer cLUB) {
+	public void setCLUB(String cLUB) {
 		CLUB = cLUB;
 	}
 	public Integer getBACKNO() {
