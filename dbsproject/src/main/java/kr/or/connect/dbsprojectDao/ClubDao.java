@@ -23,7 +23,7 @@ public class ClubDao {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
-			String sql = "SELECT * FROM club";
+			String sql = "SELECT A.clubID, A.NAME, A.MANAGER, B.NAME , A.FOUNDINGYEAR, A.CLUBPHOTO  FROM club AS A LEFT JOIN stadium AS B on A.HOMESTADIUM = B.stadiumID;";
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
 			
@@ -32,7 +32,7 @@ public class ClubDao {
 				Integer clubID = rs.getInt(1);
 				String name = rs.getString(2);
 				String manager = rs.getString(3);
-				Integer homestadium = rs.getInt(4);
+				String homestadium = rs.getString(4);
 				Integer foundingyear = rs.getInt(5);
 				String clubphoto = rs.getString(6);
 				

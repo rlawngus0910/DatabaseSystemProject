@@ -102,13 +102,13 @@
           <th colspan="7"><h4>Player</h4></th>
         </tr>
         <tr>
-          <th style="background-color: #fafafa; color: #000000; width:150px">사진</th>
-          <th style="background-color: #fafafa; color: #000000;">이름</th>
-          <th style="background-color: #fafafa; color: #000000; width:100px">포지션</th>
-          <th style="background-color: #fafafa; color: #000000;">팀</th>
-          <th style="background-color: #fafafa; color: #000000; width:100px">등번호</th>
-          <th style="background-color: #fafafa; color: #000000;">국적</th>
-          <th style="background-color: #fafafa; color: #000000; width:150px">생년월일</th>
+          <th style="background-color: #fafafa; color: #000000; width:150px">Photo</th>
+          <th style="background-color: #fafafa; color: #000000;">Name</th>
+          <th style="background-color: #fafafa; color: #000000; width:100px">Position</th>
+          <th style="background-color: #fafafa; color: #000000;">Club</th>
+          <th style="background-color: #fafafa; color: #000000; width:100px">Backno.</th>
+          <th style="background-color: #fafafa; color: #000000;">Nation</th>
+          <th style="background-color: #fafafa; color: #000000; width:200px">Birth</th>
         </tr>
 
       </thead>
@@ -118,14 +118,14 @@
       		  Player player = playerlist.get(i);
       	  
       %>
-        <tr>
+        <tr style = "color : white; font-size : 25px" >
         	<td><img src="images/PlayerPhoto/<%= player.getPHOTO() %>"/></td>
-        	<td><%= player.getNAME() %></td>
-        	<td><%= player.getPOSITION() %></td>
-        	<td><%= player.getCLUB() %></td>
-        	<td><%= player.getBACKNO() %></td>
-        	<td><%= player.getNATION() %></td>
-        	<td><%= player.getBIRTH() %></td>
+        	<td style = "vertical-align : middle"><%= player.getNAME() %></td>
+        	<td style = "vertical-align : middle"><%= player.getPOSITION() %></td>
+        	<td style = "vertical-align : middle"><%= player.getCLUB() %></td>
+        	<td style = "vertical-align : middle"><%= player.getBACKNO() %></td>
+        	<td style = "vertical-align : middle"><%= player.getNATION() %></td>
+        	<td style = "vertical-align : middle"><%= player.getBIRTH() %></td>
         </tr>
       <%
       	 }

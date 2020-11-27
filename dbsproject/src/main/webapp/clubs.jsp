@@ -105,10 +105,10 @@
 						<th colspan="7"><h4>Club</h4></th>
 					</tr>
 					<tr>
-						<th style="background-color: #fafafa; color: #000000; ">사진</th>
+						<th style="background-color: #fafafa; color: #000000; width :200px ">사진</th>
 						<th style="background-color: #fafafa; color: #000000; width :250px">구단 이름</th>
 						<th style="background-color: #fafafa; color: #000000; width: 250px">감독</th>
-						<th style="background-color: #fafafa; color: #000000;">스타디움</th>
+						<th style="background-color: #fafafa; color: #000000; ">스타디움</th>
 						<th style="background-color: #fafafa; color: #000000; width: 100px">창립년도</th>
 					</tr>
 				<tbody>
@@ -117,11 +117,11 @@
       		  Club club = clublist.get(i);
      				 %>
 					<tr style = "color: white";>	
-						<td><%= club.getCLUBPHOTO() %></td>
-						<td><%= club.getNAME() %></td>
-						<td><%= club.getMANAGER() %></td>
-						<td><%= club.getHOMESTADIUM() %></td>
-						<td><%= club.getFOUNDINGYEAR() %></td>
+						<td><img src = "images/clubs/<%= club.getCLUBPHOTO() %>"/></td>
+						<td style = "vertical-align : middle"><%= club.getNAME() %></td>
+						<td style = "vertical-align : middle"><%= club.getMANAGER() %></td>
+						<td style = "vertical-align : middle"><%= club.getHOMESTADIUM() %></td>
+						<td style = "vertical-align : middle"><%= club.getFOUNDINGYEAR() %></td>
 					</tr>
 					
 					

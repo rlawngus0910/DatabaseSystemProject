@@ -4,18 +4,18 @@ public class Club {
 	Integer CLUBID;
 	String NAME;
 	String MANAGER;
-	Integer HOMESTADIUM;
+	String HOMESTADIUM;
 	Integer FOUNDINGYEAR;
 	String CLUBPHOTO;
-	public Club(Integer cLUBID, String nAME, String mANAGER, Integer hOMESTADIUM, Integer fOUNDINGYEAR,
+	public Club(Integer cLUBID, String nAME, String mANAGER, String hOMESTADIUM, Integer fOUNDINGYEAR,
 			String cLUBPHOTO) {
 		super();
-		CLUBID = cLUBID;
-		NAME = nAME;
-		MANAGER = mANAGER;
-		HOMESTADIUM = hOMESTADIUM;
-		FOUNDINGYEAR = fOUNDINGYEAR;
-		CLUBPHOTO = cLUBPHOTO;
+		this.CLUBID = cLUBID;
+		this.NAME = nAME;
+		this.MANAGER = mANAGER;
+		this.HOMESTADIUM = hOMESTADIUM;
+		this.FOUNDINGYEAR = fOUNDINGYEAR;
+		this.CLUBPHOTO = cLUBPHOTO;
 	}
 	public Integer getCLUBID() {
 		return CLUBID;
@@ -35,10 +35,10 @@ public class Club {
 	public void setMANAGER(String mANAGER) {
 		MANAGER = mANAGER;
 	}
-	public Integer getHOMESTADIUM() {
+	public String getHOMESTADIUM() {
 		return HOMESTADIUM;
 	}
-	public void setHOMESTADIUM(Integer hOMESTADIUM) {
+	public void setHOMESTADIUM(String hOMESTADIUM) {
 		HOMESTADIUM = hOMESTADIUM;
 	}
 	public Integer getFOUNDINGYEAR() {
@@ -53,6 +53,7 @@ public class Club {
 	public void setCLUBPHOTO(String cLUBPHOTO) {
 		CLUBPHOTO = cLUBPHOTO;
 	}
+	
 	
 
 }
