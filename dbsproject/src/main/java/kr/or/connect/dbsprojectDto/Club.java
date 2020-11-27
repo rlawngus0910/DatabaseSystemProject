@@ -7,6 +7,7 @@ public class Club {
 	String HOMESTADIUM;
 	Integer FOUNDINGYEAR;
 	String CLUBPHOTO;
+	
 	public Club(Integer cLUBID, String nAME, String mANAGER, String hOMESTADIUM, Integer fOUNDINGYEAR,
 			String cLUBPHOTO) {
 		super();

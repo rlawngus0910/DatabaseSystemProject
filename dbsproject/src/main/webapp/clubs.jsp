@@ -116,7 +116,7 @@
       	  for(int i = 0;i < clublist.size();i++){
       		  Club club = clublist.get(i);
      				 %>
-					<tr style = "color: white";>	
+					<tr style = "color: white; ">	
 						<td><img src = "images/clubs/<%= club.getCLUBPHOTO() %>"/></td>
 						<td style = "vertical-align : middle"><%= club.getNAME() %></td>
 						<td style = "vertical-align : middle"><%= club.getMANAGER() %></td>
