@@ -95,12 +95,10 @@
       </div>
     </div>
     
-    <div class="container2">
+    <div style = "padding-top:40px" class="container2">
     <table class="table table-bordered table-hover" style="text-align: center;border: 1px solid #dddddd;margin-left: auto;margin-right: auto;width: 1500px;">
       <thead>
-        <tr>
-          <th colspan="7"><h4>Player</h4></th>
-        </tr>
+
         <tr>
           <th style="background-color: #fafafa; color: #000000; width:150px">Photo</th>
           <th style="background-color: #fafafa; color: #000000;">Name</th>

@@ -97,13 +97,11 @@
       </div>
     </div>
 
-		<div class="container2">
+		<div style = "background-color : white; padding-top: 30px;" class="container2">
 			<table class="table table-bordered table-hover"
-				style="text-align: center; border: 1px solid #dddddd; margin-top: 20px; margin-left: auto; margin-right: auto; width: 1500px;">
+				style="text-align: center; border: 3px solid #dddddd; margin-top: 20px; margin-left: auto; margin-right: auto; width: 1500px;">
 				<thead>
-					<tr>
-						<th colspan="7"><h4>Club</h4></th>
-					</tr>
+					
 					<tr>
 						<th style="background-color: #fafafa; color: #000000; width :200px ">사진</th>
 						<th style="background-color: #fafafa; color: #000000; width :250px">구단 이름</th>
@@ -116,9 +114,8 @@
       	  for(int i = 0;i < clublist.size();i++){
       		  Club club = clublist.get(i);
      				 %>
-
-					<tr style = "color: white; ">	
-					<tr style = "color: white; font-size:25px";>	
+	
+					<tr style = "color: black; font-size:25px; font-weight : bold;">	
 						<td><img src = "images/clubs/<%= club.getCLUBPHOTO() %>"/></td>
 						<td style = "vertical-align : middle"><%= club.getNAME() %></td>
 						<td style = "vertical-align : middle"><%= club.getMANAGER() %></td>
