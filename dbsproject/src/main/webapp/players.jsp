@@ -119,7 +119,7 @@
       	  
       %>
         <tr>
-        	<td><%= player.getPHOTO() %></td>
+        	<td><img src="images/PlayerPhoto/<%= player.getPHOTO() %>"/></td>
         	<td><%= player.getNAME() %></td>
         	<td><%= player.getPOSITION() %></td>
         	<td><%= player.getCLUB() %></td>
