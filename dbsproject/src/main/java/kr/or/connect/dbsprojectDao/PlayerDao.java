@@ -41,7 +41,6 @@ public class PlayerDao {
 				String photo = rs.getString(8);
 				player = new Player(playerID, name, nation, position,birth, club, backno, photo);
 				list.add(player);
-				
 			}
 			
 			
@@ -182,7 +181,6 @@ public class PlayerDao {
 				String photo = rs.getString(8);
 				player = new Player(playerID, name, nation, position,birth, club, backno, photo);
 				list.add(player);
-				
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
