@@ -7,10 +7,15 @@
 <html>
 <%
 	String pageNumber = "1";
+	String search = "";
 	if (request.getParameter("pageNumber") != null){
 		pageNumber = request.getParameter("pageNumber");
 	}
 	List<Player> playerlist = new PlayerDao().getPlayer(pageNumber);
+	if(request.getParameter("search") != null){
+		search = request.getParameter("search");
+	}
+	//List<Player> searchPlayer = new PlayerDao().searchList(search);
 %>
 <head>
   <title>Soccer &mdash; Website by Colorlib</title>
@@ -95,23 +100,28 @@
       </div>
     </div>
     
+    <form class="form-search" style="margin: 35px; text-align:center;" action="players.jsp">
+    	<input type="text" name="search" class="input-medium search-query" size="50" style="border-radius: 35px; padding-top:1rem; padding-bottom:1rem; padding-left:1.5rem;" placeholder="Search Player Name..."/>
+    	<button type="submit" class="btn btn-primary py-3 px-4 mr-3">Search</button>
+    </form>
     <div style = "padding-top:40px" class="container2">
     <table class="table table-bordered table-hover" style="text-align: center;border: 1px solid #dddddd;margin-left: auto;margin-right: auto;width: 1500px;">
       <thead>
-
+      
         <tr>
           <th style="background-color: #fafafa; color: #000000; width:150px">Photo</th>
           <th style="background-color: #fafafa; color: #000000;">Name</th>
           <th style="background-color: #fafafa; color: #000000; width:100px">Position</th>
-          <th style="background-color: #fafafa; color: #000000;">Club</th>
-          <th style="background-color: #fafafa; color: #000000; width:100px">Backno.</th>
+          <th style="background-color: #fafafa; color: #000000;">팀</th>
+          <th style="background-color: #fafafa; color: #000000; width:100px">Backno</th>
           <th style="background-color: #fafafa; color: #000000;">Nation</th>
-          <th style="background-color: #fafafa; color: #000000; width:200px">Birth</th>
-        </tr>
+          <th style="background-color: #fafafa; color: #000000; width:150px">Birth</th>
+        
 
       </thead>
       <tbody>
       <%
+      	if(search == ""){      
       	  for(int i = 0;i < playerlist.size();i++){
       		  Player player = playerlist.get(i);
       	  
@@ -127,47 +137,68 @@
         </tr>
       <%
       	 }
+      }else{
+  		  List<Player> searchPlayer = new PlayerDao().searchList(search);
+  		  
+  		  int pm = Integer.parseInt(pageNumber);
+  		  int searchdata = (pm) * (10 * (pm)-10);
+    	  for(int i = searchdata;i < searchdata + 20;i++){
+    		  if(i == searchPlayer.size()) break;
+      		  Player player = searchPlayer.get(i); 
       %>
+        <tr style = "color : white; font-size : 25px" >
+        	<td><img src="images/PlayerPhoto/<%= player.getPHOTO() %>"/></td>
+        	<td style = "vertical-align : middle"><%= player.getNAME() %></td>
+        	<td style = "vertical-align : middle"><%= player.getPOSITION() %></td>
+        	<td style = "vertical-align : middle"><%= player.getCLUB() %></td>
+        	<td style = "vertical-align : middle"><%= player.getBACKNO() %></td>
+        	<td style = "vertical-align : middle"><%= player.getNATION() %></td>
+        	<td style = "vertical-align : middle"><%= player.getBIRTH() %></td>
+        </tr>
+      <%
+          }
+      }
+      %>
+      <%if(search == ""){ %>  
         <tr>
         	<td colspan=7>
-        		<ul class="pagination" style="margin: 0 auto;padding-left: 40%;">
+        		<ul class="pagination" style="margin: 0 auto;justify-content: center;">
         		<%
         			int startPage = (Integer.parseInt(pageNumber) / 10) * 10 + 1;
         			if(Integer.parseInt(pageNumber) % 10 == 0) startPage -= 10;
         			int targetPage = new PlayerDao().targetPage(pageNumber);
         			if(startPage != 1) {
         		%>
-        		<li style="padding-right:15px;"><a href="players.jsp?pageNumber=<%= startPage - 1 %>"><span><%= "<" %></span></a>
+        				<li style="padding-right:15px;"><a href="players.jsp?pageNumber=<%= startPage - 1 %>"><span><%= "<" %></span></a>
         		<%
         			} else {
         		%>
-        		<li><span class="glyphicon glyphicon-chevron-left" style="color: gray;"></span></li>
+        				<li><span class="glyphicon glyphicon-chevron-left" style="color: gray;"></span></li>
         		
         		<%
         			}
         			for(int i = startPage; i < Integer.parseInt(pageNumber) ; i++) {
         		%>
-        		<li style="padding-right:15px;"><a href="players.jsp?pageNumber=<%= i %>"><%= i %></a></li>
-        		
+        				<li style="padding-right:15px;"><a href="players.jsp?pageNumber=<%= i %>"><%= i %></a></li>
         		<%
         			}
         		%>
-        		<li style="padding-right:15px;" class="active"><a href="players.jsp?pageNumber=<%= pageNumber %>"><%= pageNumber %></a></li>
+        				<li style="padding-right:15px;" class="active"><a href="players.jsp?pageNumber=<%= pageNumber %>"><%= pageNumber %></a></li>
         		<%
         			for(int i = Integer.parseInt(pageNumber) + 1; i <= targetPage + Integer.parseInt(pageNumber); i++) {
         				if(i < startPage + 10) {
         		%>
-        		<li style="padding-right:15px;"><a href="players.jsp?pageNumber=<%= i %>"><%= i %></a></li>
+        				<li style="padding-right:15px;"><a href="players.jsp?pageNumber=<%= i %>"><%= i %></a></li>
         		<%
         				}
         			}
         		    if(targetPage + Integer.parseInt(pageNumber) > startPage + 9) {
         		%>
-        		<li style="padding-right:15px;"><a href="players.jsp?pageNumber=<%= startPage + 10 %>"><%= ">" %></a></li>
+        				<li style="padding-right:15px;"><a href="players.jsp?pageNumber=<%= startPage + 10 %>"><%= ">" %></a></li>
         		<%
         		    } else {
         		%>
-        		<li><span class="glyphicon glyphicon-chevron-right"></span></li>
+        				<li><span class="glyphicon glyphicon-chevron-right"></span></li>
         		<%
         		
         		    }
@@ -175,6 +206,62 @@
         		</ul>
         	</td>
         </tr>
+        <%
+        } else{
+        
+        %>
+        <tr>
+        	<td colspan=7>
+        		<ul class="pagination" style="margin: 0 auto;justify-content: center;">
+        		<%
+        		    List<Player> searchPlayer = new PlayerDao().searchList(search);
+        			int startPage = (Integer.parseInt(pageNumber) / 10) * 10 + 1;
+        			if(Integer.parseInt(pageNumber) % 10 == 0) startPage -= 10;
+        			int targetPage = searchPlayer.size() / 20;
+        			if(startPage != 1) {
+        		%>
+        				<li style="padding-right:15px;"><a href="players.jsp?search=<%=search %>&pageNumber=<%= startPage - 1 %>"><span><%= "<" %></span></a>
+        		<%
+        			} else {
+        		%>
+        				<li><span class="glyphicon glyphicon-chevron-left" style="color: gray;"></span></li>
+        		
+        		<%
+        			}
+        			for(int i = startPage; i < Integer.parseInt(pageNumber) ; i++) {
+        		%>
+        				<li style="padding-right:15px;"><a href="players.jsp?search=<%=search %>&pageNumber=<%= i %>"><%= i %></a></li>
+        		<%
+        			}
+        		%>
+        		    <li style="padding-right:15px;" class="active"><a href="players.jsp?pageNumber=<%= pageNumber %>"><%= pageNumber %></a></li>
+        		
+        		<%
+        			for(int i = Integer.parseInt(pageNumber) + 1; i <= targetPage; i++) {
+        				if(i < startPage + 10) {
+        		%>
+        				<li style="padding-right:15px;"><a href="players.jsp?search=<%=search %>&pageNumber=<%= i %>"><%= i %></a></li>
+        		<%
+        				}
+        			}
+        		    if(targetPage + Integer.parseInt(pageNumber) > startPage + 9) {
+        		%>
+        				<li style="padding-right:15px;"><a href="players.jsp?search=<%=search %>&pageNumber=<%= startPage + 10 %>"><%= ">" %></a></li>
+        		<%
+        		    } else {
+        		%>
+        				<li><span class="glyphicon glyphicon-chevron-right"><%= ">" %></span></li>
+        		<%
+        		    }
+        		%>
+        		</ul>
+        	</td>
+        </tr>
+        
+        <%
+        }
+        
+       	%>
       </tbody>
     </table>
   </div>
