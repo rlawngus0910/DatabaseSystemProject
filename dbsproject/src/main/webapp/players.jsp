@@ -112,7 +112,7 @@
           <th style="background-color: #fafafa; color: #000000; width:150px">Photo</th>
           <th style="background-color: #fafafa; color: #000000;">Name</th>
           <th style="background-color: #fafafa; color: #000000; width:100px">Position</th>
-          <th style="background-color: #fafafa; color: #000000;">팀</th>
+          <th style="background-color: #fafafa; color: #000000;">Team</th>
           <th style="background-color: #fafafa; color: #000000; width:100px">Backno</th>
           <th style="background-color: #fafafa; color: #000000;">Nation</th>
           <th style="background-color: #fafafa; color: #000000; width:150px">Birth</th>
@@ -215,9 +215,15 @@
         		<ul class="pagination" style="margin: 0 auto;justify-content: center;">
         		<%
         		    List<Player> searchPlayer = new PlayerDao().searchList(search);
+        		    int targetPage = 0;
         			int startPage = (Integer.parseInt(pageNumber) / 10) * 10 + 1;
         			if(Integer.parseInt(pageNumber) % 10 == 0) startPage -= 10;
-        			int targetPage = searchPlayer.size() / 20;
+        			if(searchPlayer.size() % 20 == 0) {
+        				targetPage = (searchPlayer.size() / 20);
+        			}
+        			else if(searchPlayer.size() % 20 != 0){
+        				targetPage = (searchPlayer.size() / 20) + 1;
+        			}
         			if(startPage != 1) {
         		%>
         				<li style="padding-right:15px;"><a href="players.jsp?search=<%=search %>&pageNumber=<%= startPage - 1 %>"><span><%= "<" %></span></a>
@@ -234,7 +240,7 @@
         		<%
         			}
         		%>
-        		    <li style="padding-right:15px;" class="active"><a href="players.jsp?pageNumber=<%= pageNumber %>"><%= pageNumber %></a></li>
+        		    <li style="padding-right:15px;" class="active"><%= pageNumber %></li>
         		
         		<%
         			for(int i = Integer.parseInt(pageNumber) + 1; i <= targetPage; i++) {
