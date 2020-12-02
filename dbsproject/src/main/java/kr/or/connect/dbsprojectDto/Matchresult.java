@@ -7,10 +7,11 @@ public class Matchresult {
 	Integer MATCHID;
 	Integer HOMESCORE;
 	Integer AWAYSCORE;
-	Integer HOMECLUB;
-	Integer AWAYCLUB;
+	String HOMECLUB;
+	String AWAYCLUB;
 	Date DATE;
-	public Matchresult(Integer mATCHID, Integer hOMESCORE, Integer aWAYSCORE, Integer hOMECLUB, Integer aWAYCLUB,
+	
+	public Matchresult(Integer mATCHID, Integer hOMESCORE, Integer aWAYSCORE, String hOMECLUB, String aWAYCLUB,
 			Date dATE) {
 		super();
 		MATCHID = mATCHID;
@@ -38,16 +39,16 @@ public class Matchresult {
 	public void setAWAYSCORE(Integer aWAYSCORE) {
 		AWAYSCORE = aWAYSCORE;
 	}
-	public Integer getHOMECLUB() {
+	public String getHOMECLUB() {
 		return HOMECLUB;
 	}
-	public void setHOMECLUB(Integer hOMECLUB) {
+	public void setHOMECLUB(String hOMECLUB) {
 		HOMECLUB = hOMECLUB;
 	}
-	public Integer getAWAYCLUB() {
+	public String getAWAYCLUB() {
 		return AWAYCLUB;
 	}
-	public void setAWAYCLUB(Integer aWAYCLUB) {
+	public void setAWAYCLUB(String aWAYCLUB) {
 		AWAYCLUB = aWAYCLUB;
 	}
 	public Date getDATE() {

@@ -25,7 +25,7 @@ public class MatchresultDao {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
-			String sql = "SELECT * FROM matchresult";
+			String sql = "SELECT * FROM matchresult ORDER BY DATE DESC";
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
 			
@@ -34,8 +34,9 @@ public class MatchresultDao {
 				Integer matchresultID = rs.getInt(1);
 				Integer homescore = rs.getInt(2);
 				Integer awayscore = rs.getInt(3);
-				Integer homeclub = rs.getInt(4);
-				Integer awayclub = rs.getInt(5);
+				String homeclub = rs.getString(4);
+				String awayclub = rs.getString(5);
+				
 				Date date = rs.getDate(6);
 				
 				matchresult = new Matchresult(matchresultID, homescore, awayscore, homeclub, awayclub, date);
@@ -72,4 +73,5 @@ public class MatchresultDao {
 		
 		return list;
 	}
+
 }
