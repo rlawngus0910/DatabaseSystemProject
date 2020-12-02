@@ -7,6 +7,7 @@ public class Goods {
 	Integer GOODSPRICE;
 	String CATEGORY;
 	String GOODSPHOTO;
+	
 	public Goods(Integer gOODSID, Integer cLUBNUMBER, String gOODSNAME, Integer gOODSPRICE, String cATEGORY,
 			String gOODSPHOTO) {
 		super();
