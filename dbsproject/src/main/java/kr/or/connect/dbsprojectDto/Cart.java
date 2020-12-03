@@ -4,6 +4,11 @@ public class Cart {
 	Integer CARTID;
 	String USER;
 	Integer GID;
+	Integer amount;
+	
+	public Cart(){}
+	
+	
 	public Cart(Integer cARTID, String uSER, Integer gID) {
 		super();
 		CARTID = cARTID;
@@ -27,6 +32,12 @@ public class Cart {
 	}
 	public void setGID(Integer gID) {
 		GID = gID;
+	}
+	public Integer getAmount() {
+		return amount;
+	}
+	public void setAmount(Integer amount) {
+		this.amount = amount;
 	}
 
 	

@@ -66,4 +66,51 @@ public class CartDao {
 		
 		return list;
 	}
+	
+	public int addCart(String userID, int goodsID) {
+		int result = 0;
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
+			String sql = "INSERT INTO cart(user, gID, amount) VALUES (?,?,1)";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, userID);
+			ps.setInt(2, goodsID);
+			result = ps.executeUpdate();
+			
+			
+		}catch(Exception e) {
+			result = -1;
+			e.printStackTrace();
+		}finally {
+			if(rs!=null) {
+				try {
+					rs.close();
+				}catch(SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if(ps!=null) {
+				try {
+					ps.close();
+				}catch(SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if(conn!=null) {
+				try {
+					conn.close();
+				}catch(SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		if(result > 0) return 1;
+		else return -1;
+	}
 }
