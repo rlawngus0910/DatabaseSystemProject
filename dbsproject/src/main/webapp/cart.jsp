@@ -121,7 +121,7 @@
 			</table>
 			<p style = "text-align:right; padding-right:300px;">Subtotal : </p>
 			
-			<div style = "text-align: center; margin-top: 50px; padding-bottom: 30px; margin-left : auto; margin-right : auto;"id="button">
+			<div style = "text-align: center; margin-top: 50px; padding-bottom: 35px; margin-left : auto; margin-right : auto;"id="button">
 			<button type="button" class="btn btn-primary py-2 px-2 mr-2" >Buy All</button>
 			<button type="button" class="btn btn-primary py-2 px-2 mr-2" >return to shop</button>
 			<button type="button" class="btn btn-primary py-2 px-2 mr-2" >Delete All</button>
