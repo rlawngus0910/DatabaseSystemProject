@@ -46,6 +46,10 @@
 
 <link rel="stylesheet" href="css/style.css">
 
+<link rel="stylesheet" href="css/demo.css">
+
+  <link rel="stylesheet" href="css/style2.css">
+
 
 </head>
 
@@ -122,6 +126,7 @@
 			</p>
 		</div>
 		<br>
+	<% if (userID != null) {%>
 	<div id = "form1" class = "row">
 		<% for(int i = 0;i < uniformlist.size();i++) {
 			Goods goods = uniformlist.get(i);%>
@@ -156,7 +161,7 @@
                 </h4>
                 <p class="card-text">Price(£Ü) : <%=goods.getGOODSPRICE() %> </p>
                 <button type="button" class="btn btn-primary py-3 px-4 mr-3" >Buy Now</button>
-                <button type="button" class="btn btn-primary py-3 px-4 mr-3" >Add to Cart</button>
+                <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="location.href = 'cartAction.jsp?goodsID=<%=goods.getGOODSID() %>&userID=<%=userID %>'" >Add to Cart</button>
               </div>
               <div class="card-footer">
                 <small class="text-muted">¡Ú ¡Ú ¡Ú ¡Ù ¡Ù</small>
@@ -178,7 +183,7 @@
                 </h4>
                 <p class="card-text">Price(£Ü) : <%=goods.getGOODSPRICE() %> </p>
                 <button type="button" class="btn btn-primary py-3 px-4 mr-3" >Buy Now</button>
-                <button type="button" class="btn btn-primary py-3 px-4 mr-3" >Add to Cart</button>
+                <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="location.href = 'cartAction.jsp?goodsID=<%=goods.getGOODSID() %>&userID=<%=userID %>'" >Add to Cart</button>
               </div>
               <div class="card-footer">
                 <small class="text-muted">¡Ú ¡Ú ¡Ú ¡Ú ¡Ù</small>
@@ -200,7 +205,7 @@
                 </h4>
                 <p class="card-text">Price(£Ü) : <%=goods.getGOODSPRICE() %> </p>
                 <button type="button" class="btn btn-primary py-3 px-4 mr-3" >Buy Now</button>
-                <button type="button" class="btn btn-primary py-3 px-4 mr-3" >Add to Cart</button>
+                <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="location.href = 'cartAction.jsp?goodsID=<%=goods.getGOODSID() %>&userID=<%=userID %>'" >Add to Cart</button>
               </div>
               <div class="card-footer">
                 <small class="text-muted">¡Ú ¡Ú ¡Ú ¡Ú ¡Ù</small>
@@ -222,7 +227,7 @@
                 </h4>
                 <p class="card-text">Price(£Ü) : <%=goods.getGOODSPRICE() %> </p>
                 <button type="button" class="btn btn-primary py-3 px-4 mr-3" >Buy Now</button>
-                <button type="button" class="btn btn-primary py-3 px-4 mr-3" >Add to Cart</button>
+                <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="location.href = 'cartAction.jsp?goodsID=<%=goods.getGOODSID() %>&userID=<%=userID %>'">Add to Cart</button>
               </div>
               <div class="card-footer">
                 <small class="text-muted">¡Ú ¡Ú ¡Ú ¡Ú ¡Ú</small>
@@ -231,8 +236,122 @@
           </div>
           <%} %>
         </div>
-       
-	</div>
+       <%} %>
+       <%if (userID == null){ %>
+       <div id = "form1" class = "row">
+		<% for(int i = 0;i < uniformlist.size();i++) {
+			Goods goods = uniformlist.get(i);%>
+          <div class="col-lg-3 col-md-4 mb-3">
+            <div class="card h-100">
+              <img class="card-img-top" src="images/goods/uniform/<%=goods.getGOODSPHOTO()%>"/>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#"><%=goods.getGOODSNAME() %></a>
+                </h4>
+                <p class="card-text">Price(£Ü) : <%=goods.getGOODSPRICE() %> </p>
+                <button type="button" class="btn btn-primary py-3 px-4 mr-3" >Buy Now</button>
+                <button type="button" class="btn btn-primary py-3 px-4 mr-3" data-toggle="modal" data-target="#loginModal">Add to Cart</button>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">¡Ú ¡Ú ¡Ú ¡Ú ¡Ú </small>
+              </div>
+            </div>
+          </div>
+          
+          <%} %>
+        </div>
+	<div id = "form2" class = "row">
+		
+		<% for(int i = 0;i < balllist.size();i++) {
+			Goods goods = balllist.get(i);%>
+          <div class="col-lg-3 col-md-4 mb-3">
+            <div class="card h-100">
+              <img class="card-img-top" src="images/goods/ball/<%=goods.getGOODSPHOTO()%>"/>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#"><%=goods.getGOODSNAME() %></a>
+                </h4>
+                <p class="card-text">Price(£Ü) : <%=goods.getGOODSPRICE() %> </p>
+                <button type="button" class="btn btn-primary py-3 px-4 mr-3" >Buy Now</button>
+                <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="location.href = 'cartAction.jsp?goodsID=<%=goods.getGOODSID() %>&userID=<%=userID %>'" >Add to Cart</button>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">¡Ú ¡Ú ¡Ú ¡Ù ¡Ù</small>
+              </div>
+            </div>
+          </div>
+          <%} %>
+        </div>
+	<div id = "form3" class = "row">
+		
+		<% for(int i = 0;i < masklist.size();i++) {
+			Goods goods = masklist.get(i);%>
+          <div class="col-lg-3 col-md-4 mb-3">
+            <div class="card h-100">
+              <img class="card-img-top" src="images/goods/mask/<%=goods.getGOODSPHOTO()%>"/>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#"><%=goods.getGOODSNAME() %></a>
+                </h4>
+                <p class="card-text">Price(£Ü) : <%=goods.getGOODSPRICE() %> </p>
+                <button type="button" class="btn btn-primary py-3 px-4 mr-3" >Buy Now</button>
+                <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="location.href = 'cartAction.jsp?goodsID=<%=goods.getGOODSID() %>&userID=<%=userID %>'" >Add to Cart</button>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">¡Ú ¡Ú ¡Ú ¡Ú ¡Ù</small>
+              </div>
+            </div>
+          </div>
+          <%} %>
+        </div>
+	<div id = "form4" class = "row">
+		
+		<% for(int i = 0;i < mugcuplist.size();i++) {
+			Goods goods = mugcuplist.get(i);%>
+          <div class="col-lg-3 col-md-4 mb-3">
+            <div class="card h-100">
+              <img class="card-img-top" src="images/goods/mugcup/<%=goods.getGOODSPHOTO()%>"/>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#"><%=goods.getGOODSNAME() %></a>
+                </h4>
+                <p class="card-text">Price(£Ü) : <%=goods.getGOODSPRICE() %> </p>
+                <button type="button" class="btn btn-primary py-3 px-4 mr-3" >Buy Now</button>
+                <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="location.href = 'cartAction.jsp?goodsID=<%=goods.getGOODSID() %>&userID=<%=userID %>'" >Add to Cart</button>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">¡Ú ¡Ú ¡Ú ¡Ú ¡Ù</small>
+              </div>
+            </div>
+          </div>
+          <%} %>
+        </div>
+	<div id = "form5" class = "row">
+		
+		<% for(int i = 0;i < baglist.size();i++) {
+			Goods goods = baglist.get(i);%>
+          <div class="col-lg-3 col-md-4 mb-3">
+            <div class="card h-100">
+              <img class="card-img-top" src="images/goods/bag/<%=goods.getGOODSPHOTO()%>"/>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#"><%=goods.getGOODSNAME() %></a>
+                </h4>
+                <p class="card-text">Price(£Ü) : <%=goods.getGOODSPRICE() %> </p>
+                <button type="button" class="btn btn-primary py-3 px-4 mr-3" >Buy Now</button>
+                <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="location.href = 'cartAction.jsp?goodsID=<%=goods.getGOODSID() %>&userID=<%=userID %>'">Add to Cart</button>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">¡Ú ¡Ú ¡Ú ¡Ú ¡Ú</small>
+              </div>
+            </div>
+          </div>
+          <%} %>
+        </div>
+        </div>
+	    
+       <%} %>
+	
 
 
 
