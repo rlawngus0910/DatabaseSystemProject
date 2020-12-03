@@ -4,6 +4,9 @@ public class Purchaselist {
 	Integer PURCHASELISTID;
 	String	USER;
 	Integer ITMEID;
+	Integer amount;
+	
+	public Purchaselist() {}
 	public Purchaselist(Integer pURCHASELISTID, String uSER, Integer iTMEID) {
 		super();
 		PURCHASELISTID = pURCHASELISTID;
@@ -28,7 +31,11 @@ public class Purchaselist {
 	public void setITMEID(Integer iTMEID) {
 		ITMEID = iTMEID;
 	}
-	
-	
+	public Integer getAmount() {
+		return amount;
+	}
+	public void setAmount(Integer amount) {
+		this.amount = amount;
+	}
 
 }
