@@ -7,18 +7,17 @@ public class Matchresult {
 	Integer MATCHID;
 	Integer HOMESCORE;
 	Integer AWAYSCORE;
-	String HOMECLUB;
-	String AWAYCLUB;
+	String HOMETEAM;
+	String AWAYTEAM;
 	Date DATE;
-	
-	public Matchresult(Integer mATCHID, Integer hOMESCORE, Integer aWAYSCORE, String hOMECLUB, String aWAYCLUB,
+	public Matchresult(Integer mATCHID, Integer hOMESCORE, Integer aWAYSCORE, String hOMETEAM, String aWAYTEAM,
 			Date dATE) {
 		super();
 		MATCHID = mATCHID;
 		HOMESCORE = hOMESCORE;
 		AWAYSCORE = aWAYSCORE;
-		HOMECLUB = hOMECLUB;
-		AWAYCLUB = aWAYCLUB;
+		HOMETEAM = hOMETEAM;
+		AWAYTEAM = aWAYTEAM;
 		DATE = dATE;
 	}
 	public Integer getMATCHID() {
@@ -39,17 +38,17 @@ public class Matchresult {
 	public void setAWAYSCORE(Integer aWAYSCORE) {
 		AWAYSCORE = aWAYSCORE;
 	}
-	public String getHOMECLUB() {
-		return HOMECLUB;
+	public String getHOMETEAM() {
+		return HOMETEAM;
 	}
-	public void setHOMECLUB(String hOMECLUB) {
-		HOMECLUB = hOMECLUB;
+	public void setHOMETEAM(String hOMETEAM) {
+		HOMETEAM = hOMETEAM;
 	}
-	public String getAWAYCLUB() {
-		return AWAYCLUB;
+	public String getAWAYTEAM() {
+		return AWAYTEAM;
 	}
-	public void setAWAYCLUB(String aWAYCLUB) {
-		AWAYCLUB = aWAYCLUB;
+	public void setAWAYTEAM(String aWAYTEAM) {
+		AWAYTEAM = aWAYTEAM;
 	}
 	public Date getDATE() {
 		return DATE;
@@ -57,6 +56,7 @@ public class Matchresult {
 	public void setDATE(Date dATE) {
 		DATE = dATE;
 	}
+	
 	
 	
 

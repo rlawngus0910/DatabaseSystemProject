@@ -34,12 +34,12 @@ public class MatchresultDao {
 				Integer matchresultID = rs.getInt(1);
 				Integer homescore = rs.getInt(2);
 				Integer awayscore = rs.getInt(3);
-				String homeclub = rs.getString(4);
-				String awayclub = rs.getString(5);
-				
+				String hometeam = rs.getString(4);
+				String awayteam = rs.getString(5);
 				Date date = rs.getDate(6);
+
 				
-				matchresult = new Matchresult(matchresultID, homescore, awayscore, homeclub, awayclub, date);
+				matchresult = new Matchresult(matchresultID, homescore, awayscore, hometeam, awayteam, date);
 				list.add(matchresult);
 				
 			}

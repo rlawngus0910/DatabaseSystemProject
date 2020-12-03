@@ -1,18 +1,23 @@
 package kr.or.connect.dbsprojectDto;
 
 import java.util.Date;
+import java.sql.Time;
+
 
 public class Schedule {
 	Integer SCHEDULEID;
+	String HOMETEAM;
+	String AWAYTEAM;
 	Date DATE;
-	Integer HOMESTADIUM;
-	Integer AWAYSTADIUM;
-	public Schedule(Integer sCHEDULEID, Date dATE, Integer hOMESTADIUM, Integer aWAYSTADIUM) {
+	String time;
+	
+	public Schedule(Integer sCHEDULEID, String hOMETEAM, String aWAYTEAM, Date dATE, String time) {
 		super();
 		SCHEDULEID = sCHEDULEID;
+		HOMETEAM = hOMETEAM;
+		AWAYTEAM = aWAYTEAM;
 		DATE = dATE;
-		HOMESTADIUM = hOMESTADIUM;
-		AWAYSTADIUM = aWAYSTADIUM;
+		this.time = time;
 	}
 	public Integer getSCHEDULEID() {
 		return SCHEDULEID;
@@ -20,23 +25,29 @@ public class Schedule {
 	public void setSCHEDULEID(Integer sCHEDULEID) {
 		SCHEDULEID = sCHEDULEID;
 	}
+	public String getHOMETEAM() {
+		return HOMETEAM;
+	}
+	public void setHOMETEAM(String hOMETEAM) {
+		HOMETEAM = hOMETEAM;
+	}
+	public String getAWAYTEAM() {
+		return AWAYTEAM;
+	}
+	public void setAWAYTEAM(String aWAYTEAM) {
+		AWAYTEAM = aWAYTEAM;
+	}
 	public Date getDATE() {
 		return DATE;
 	}
 	public void setDATE(Date dATE) {
 		DATE = dATE;
 	}
-	public Integer getHOMESTADIUM() {
-		return HOMESTADIUM;
+	public String getTime() {
+		return time;
 	}
-	public void setHOMESTADIUM(Integer hOMESTADIUM) {
-		HOMESTADIUM = hOMESTADIUM;
-	}
-	public Integer getAWAYSTADIUM() {
-		return AWAYSTADIUM;
-	}
-	public void setAWAYSTADIUM(Integer aWAYSTADIUM) {
-		AWAYSTADIUM = aWAYSTADIUM;
+	public void setTime(String time) {
+		this.time = time;
 	}
 	
 	

@@ -10,6 +10,8 @@ import java.util.List;
 import kr.or.connect.dbsprojectDto.*;
 import java.util.Date;
 
+
+
 public class ScheduleDao {
 	private static String dburl = "jdbc:mysql://ec2-15-164-94-56.ap-northeast-2.compute.amazonaws.com:3306/KJHDB";
 	private static String dbUser = "Kimjuhyun";
@@ -24,23 +26,21 @@ public class ScheduleDao {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
-			String sql = "SELECT * FROM schedule";
+			String sql = "SELECT * FROM schedule ORDER BY DATE";
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
 			
 			while(rs.next()) {
-				
 				Integer scheduleID = rs.getInt(1);
-				Date date = rs.getDate(2);
-				Integer homestadium = rs.getInt(3);
-				Integer awaystadium = rs.getInt(4);
-				
-				schedule = new Schedule(scheduleID, date, homestadium, awaystadium);
+				String hometeam = rs.getString(2);
+				String awayteam = rs.getString(3);
+				Date date = rs.getDate(4);
+				String time = rs.getString(5);
+
+				schedule = new Schedule(scheduleID, hometeam, awayteam, date, time);
 				list.add(schedule);
-				
 			}
-			
-			
+	
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
