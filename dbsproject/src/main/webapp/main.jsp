@@ -74,7 +74,7 @@
                 <li class="active"><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="matches.html" class="nav-link">Players</a></li>
                 <li><a href="players.html" class="nav-link">Clubs</a></li>
-                <li><a href="blog.html" class="nav-link">Goods</a></li>
+                <li><a href="goods.jsp" class="nav-link">Goods</a></li>
                 <li><a href="contact.html" class="nav-link">Ticketing</a></li>
                 <li><a href="contact.html" class="nav-link">Matches</a></li>
               </ul>

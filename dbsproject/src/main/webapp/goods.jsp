@@ -8,6 +8,7 @@
 
 <%
 
+    
 	List<Goods> uniformlist = new GoodsDao().getUniform();
 	List<Goods> balllist = new GoodsDao().getball();
 	List<Goods> masklist = new GoodsDao().getmask();
@@ -49,7 +50,12 @@
 </head>
 
 <body>
-
+<%
+    String userID = null;
+    if(session.getAttribute("userID") != null){
+        userID = (String) session.getAttribute("userID");
+    }
+%>
 	<div class="site-wrap">
 
 		<div class="site-mobile-menu site-navbar-target">
@@ -128,7 +134,7 @@
                 </h4>
                 <p class="card-text">Price(£Ü) : <%=goods.getGOODSPRICE() %> </p>
                 <button type="button" class="btn btn-primary py-3 px-4 mr-3" >Buy Now</button>
-                <button type="button" class="btn btn-primary py-3 px-4 mr-3" >Add to Cart</button>
+                <button type="submit" class="btn btn-primary py-3 px-4 mr-3" onclick="location.href = 'cartAction.jsp?goodsID=<%=goods.getGOODSID() %>&userID=<%=userID %>'">Add to Cart</button>
               </div>
               <div class="card-footer">
                 <small class="text-muted">¡Ú ¡Ú ¡Ú ¡Ú ¡Ú </small>
