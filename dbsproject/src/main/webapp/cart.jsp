@@ -3,6 +3,8 @@
 <%@ page import="kr.or.connect.dbsprojectDto.Cart"%>
 <%@ page import="kr.or.connect.dbsprojectDao.CartDao"%>
 <%@ page import="java.util.List"%>
+<jsp:useBean id="cart" class="kr.or.connect.dbsprojectDto.Cart" scope="page"/>
+<jsp:setProperty name="cart" property="USER"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,6 +41,13 @@
 </head>
 
 <body>
+<%
+	String userID = null;
+	if(session.getAttribute("userID") != null){
+		userID = (String) session.getAttribute("userID");
+	}
+
+%>
 
 	<div class="site-wrap">
 
@@ -93,8 +102,7 @@
         </div>
       </div>
     </div>
-
-		<div style = "background-color : white; padding-top: 10px;" class="container2">
+	<div style = "background-color : white; padding-top: 10px;" class="container2">
 			<p style = "font-size : 30px; margin-left:200px;">Shopping Cart</p>
 			
 			<table class="table table-bordered table-hover"
@@ -109,17 +117,29 @@
 						<th style="background-color: #fafafa; color: #000000; width: 20px">Delete</th>
 					</tr>
 					<tbody>
+					<%
+					CartDao dao = new CartDao();
+					String ID = request.getParameter("userID");
+					List<Cart> cartlist = dao.getCart(ID);
+					int subtotal = 0;
+					for(int i=0;i<cartlist.size();i++){
+						Cart carts = cartlist.get(i);
+					%>
 					<tr>
-					<th></th>
-					<th></th>
-					<th></th>
-					<th></th>
-					<th></th>
+					<th><img src="images/goods/<%=carts.getImg() %>"></th>
+					<th><%=carts.getName() %></th>
+					<th><%=carts.getPrice() %></th>
+					<th><button type="button" class="btn btn-primary py-2 px-2 mr-2">-</button><%=carts.getAmount() %><button type="button" class="btn btn-primary py-2 px-2 mr-2">+</button></th>
+					<th><%=carts.getAmount() * carts.getPrice() %></th>
 					<th></th>
 					</tr>
+					<%
+						subtotal += carts.getAmount() * carts.getPrice();
+					}
+					%>
 					</tbody>
 			</table>
-			<p style = "text-align:right; padding-right:300px;">Subtotal : </p>
+			<p style = "text-align:right; padding-right:300px;">Subtotal : <%=subtotal %> </p>
 			
 			<div style = "text-align: center; margin-top: 50px; padding-bottom: 30px; margin-left : auto; margin-right : auto;"id="button">
 			<button type="button" class="btn btn-primary py-2 px-2 mr-2" >Buy All</button>

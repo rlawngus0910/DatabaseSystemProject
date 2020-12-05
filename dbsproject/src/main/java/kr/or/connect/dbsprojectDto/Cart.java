@@ -5,15 +5,57 @@ public class Cart {
 	String USER;
 	Integer GID;
 	Integer amount;
+	String img;
+	String name;
+	Integer price;
 	
 	public Cart(){}
 	
 	
-	public Cart(Integer cARTID, String uSER, Integer gID) {
+	public Cart(Integer cartID, String img, String name, Integer price, Integer amount) {
+		CARTID = cartID;
+		this.img = img;
+		this.name = name;
+		this.price = price;
+		this.amount = amount;
+	}
+	
+	public String getImg() {
+		return img;
+	}
+
+
+	public void setImg(String img) {
+		this.img = img;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public Integer getPrice() {
+		return price;
+	}
+
+
+	public void setPrice(Integer price) {
+		this.price = price;
+	}
+
+
+	public Cart(Integer cARTID, String uSER, Integer gID, Integer AMOUNT) {
 		super();
 		CARTID = cARTID;
 		USER = uSER;
 		GID = gID;
+		amount = AMOUNT;
 	}
 	public Integer getCARTID() {
 		return CARTID;
@@ -39,6 +81,7 @@ public class Cart {
 	public void setAmount(Integer amount) {
 		this.amount = amount;
 	}
+	
 
 	
 }

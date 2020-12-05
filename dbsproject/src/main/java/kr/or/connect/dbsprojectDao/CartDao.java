@@ -13,7 +13,7 @@ public class CartDao {
 	private static String dburl = "jdbc:mysql://ec2-15-164-94-56.ap-northeast-2.compute.amazonaws.com:3306/KJHDB";
 	private static String dbUser = "Kimjuhyun";
 	private static String dbpasswd = "juhyun123";
-	public List<Cart> getCart() {
+	public List<Cart> getCart(String userID) {
 		List<Cart> list = new ArrayList<>();
 		Cart cart = null;
 		Connection conn = null;
@@ -23,16 +23,18 @@ public class CartDao {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
-			String sql = "SELECT * FROM cart";
+			String sql = "SELECT B.cartID, A.goodsPhoto, A.goodsName, A.goodsPrice, B.amount FROM goods AS A LEFT JOIN cart AS B on A.goodsID = B.gID WHERE user = ?";
 			ps = conn.prepareStatement(sql);
+			ps.setString(1, userID);
 			rs = ps.executeQuery();
 			
 			while(rs.next()) {
-				
 				Integer cartID = rs.getInt(1);
-				String user = rs.getString(2);
-				Integer gID = rs.getInt(3);
-				cart = new Cart(cartID, user, gID);
+				String img = rs.getString(2);
+				String name = rs.getString(3);
+				Integer price = rs.getInt(4);
+				Integer amount = rs.getInt(5);
+				cart = new Cart(cartID,img, name, price, amount);
 				list.add(cart);
 				
 			}
