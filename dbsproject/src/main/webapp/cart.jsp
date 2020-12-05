@@ -129,9 +129,12 @@
 					<th><img src="images/goods/<%=carts.getImg() %>"></th>
 					<th><%=carts.getName() %></th>
 					<th><%=carts.getPrice() %></th>
-					<th><button type="button" class="btn btn-primary py-2 px-2 mr-2">-</button><%=carts.getAmount() %><button type="button" class="btn btn-primary py-2 px-2 mr-2">+</button></th>
+					<th><button type="button" class="btn btn-primary py-2 px-2 mr-2"  onclick="location.href = 'http://localhost:8080/dbsproject/MinusAmountAction?userID=<%=userID %>&cartID=<%=carts.getCARTID() %>&amount=<%=carts.getAmount()%>'">-</button>
+					<%=carts.getAmount() %>
+					<button type="button" class="btn btn-primary py-2 px-2 mr-2" onclick="location.href = 'http://localhost:8080/dbsproject/AddAmountAction?userID=<%=userID %>&cartID=<%=carts.getCARTID() %>&amount=<%=carts.getAmount()%>'">+</button></th>
 					<th><%=carts.getAmount() * carts.getPrice() %></th>
-					<th></th>
+					<th><button type="button" class="btn btn-primary py-2 px-2 mr-2">Buy</button>
+					    <button type="button" class="btn btn-primary py-2 px-2 mr-2" onclick="location.href = 'http://localhost:8080/dbsproject/DeleteGoodsAction?userID=<%=userID %>&cartID=<%=carts.getCARTID() %>'">Delete</button></th>
 					</tr>
 					<%
 						subtotal += carts.getAmount() * carts.getPrice();
@@ -143,8 +146,8 @@
 			
 			<div style = "text-align: center; margin-top: 50px; padding-bottom: 30px; margin-left : auto; margin-right : auto;"id="button">
 			<button type="button" class="btn btn-primary py-2 px-2 mr-2" >Buy All</button>
-			<button type="button" class="btn btn-primary py-2 px-2 mr-2" >return to shop</button>
-			<button type="button" class="btn btn-primary py-2 px-2 mr-2" >Delete All</button>
+			<button type="button" class="btn btn-primary py-2 px-2 mr-2" onclick="location.href = 'goods.jsp'">return to shop</button>
+			<button type="button" class="btn btn-primary py-2 px-2 mr-2" onclick="location.href = 'http://localhost:8080/dbsproject/DeleteAllGoodsAction?userID=<%=userID %>'">Delete All</button>
 			</div>
 		</div>
 

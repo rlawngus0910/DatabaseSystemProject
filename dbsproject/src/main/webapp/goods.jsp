@@ -132,7 +132,7 @@
 			Goods goods = uniformlist.get(i);%>
           <div class="col-lg-3 col-md-4 mb-3">
             <div class="card h-100">
-              <img class="card-img-top" src="images/goods/uniform/<%=goods.getGOODSPHOTO()%>"/>
+              <img class="card-img-top" src="images/goods/<%=goods.getGOODSPHOTO()%>"/>
               <div class="card-body">
                 <h4 class="card-title">
                   <a href="#"><%=goods.getGOODSNAME() %></a>
@@ -154,7 +154,7 @@
 			Goods goods = balllist.get(i);%>
           <div class="col-lg-3 col-md-4 mb-3">
             <div class="card h-100">
-              <img class="card-img-top" src="images/goods/ball/<%=goods.getGOODSPHOTO()%>"/>
+              <img class="card-img-top" src="images/goods/<%=goods.getGOODSPHOTO()%>"/>
               <div class="card-body">
                 <h4 class="card-title">
                   <a href="#"><%=goods.getGOODSNAME() %></a>
@@ -176,7 +176,7 @@
 			Goods goods = masklist.get(i);%>
           <div class="col-lg-3 col-md-4 mb-3">
             <div class="card h-100">
-              <img class="card-img-top" src="images/goods/mask/<%=goods.getGOODSPHOTO()%>"/>
+              <img class="card-img-top" src="images/goods/<%=goods.getGOODSPHOTO()%>"/>
               <div class="card-body">
                 <h4 class="card-title">
                   <a href="#"><%=goods.getGOODSNAME() %></a>
@@ -198,7 +198,7 @@
 			Goods goods = mugcuplist.get(i);%>
           <div class="col-lg-3 col-md-4 mb-3">
             <div class="card h-100">
-              <img class="card-img-top" src="images/goods/mugcup/<%=goods.getGOODSPHOTO()%>"/>
+              <img class="card-img-top" src="images/goods/<%=goods.getGOODSPHOTO()%>"/>
               <div class="card-body">
                 <h4 class="card-title">
                   <a href="#"><%=goods.getGOODSNAME() %></a>
@@ -220,7 +220,7 @@
 			Goods goods = baglist.get(i);%>
           <div class="col-lg-3 col-md-4 mb-3">
             <div class="card h-100">
-              <img class="card-img-top" src="images/goods/bag/<%=goods.getGOODSPHOTO()%>"/>
+              <img class="card-img-top" src="images/goods/<%=goods.getGOODSPHOTO()%>"/>
               <div class="card-body">
                 <h4 class="card-title">
                   <a href="#"><%=goods.getGOODSNAME() %></a>
