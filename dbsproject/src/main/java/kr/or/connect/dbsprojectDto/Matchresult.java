@@ -4,27 +4,35 @@ import java.util.Date;
 
 public class Matchresult {
 	
-	Integer MATCHID;
+	Integer HOMECLUBID;
+	Integer AWAYCLUBID;
 	Integer HOMESCORE;
 	Integer AWAYSCORE;
 	String HOMETEAM;
 	String AWAYTEAM;
 	Date DATE;
-	public Matchresult(Integer mATCHID, Integer hOMESCORE, Integer aWAYSCORE, String hOMETEAM, String aWAYTEAM,
-			Date dATE) {
+	public Matchresult(Integer hOMECLUBID, Integer aWAYCLUBID, Integer hOMESCORE, Integer aWAYSCORE, String hOMETEAM,
+			String aWAYTEAM, Date dATE) {
 		super();
-		MATCHID = mATCHID;
+		HOMECLUBID = hOMECLUBID;
+		AWAYCLUBID = aWAYCLUBID;
 		HOMESCORE = hOMESCORE;
 		AWAYSCORE = aWAYSCORE;
 		HOMETEAM = hOMETEAM;
 		AWAYTEAM = aWAYTEAM;
 		DATE = dATE;
 	}
-	public Integer getMATCHID() {
-		return MATCHID;
+	public Integer getHOMECLUBID() {
+		return HOMECLUBID;
 	}
-	public void setMATCHID(Integer mATCHID) {
-		MATCHID = mATCHID;
+	public void setHOMECLUBID(Integer hOMECLUBID) {
+		HOMECLUBID = hOMECLUBID;
+	}
+	public Integer getAWAYCLUBID() {
+		return AWAYCLUBID;
+	}
+	public void setAWAYCLUBID(Integer aWAYCLUBID) {
+		AWAYCLUBID = aWAYCLUBID;
 	}
 	public Integer getHOMESCORE() {
 		return HOMESCORE;
@@ -56,8 +64,6 @@ public class Matchresult {
 	public void setDATE(Date dATE) {
 		DATE = dATE;
 	}
-	
-	
 	
 
 }

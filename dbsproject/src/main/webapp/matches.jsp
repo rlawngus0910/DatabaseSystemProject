@@ -42,7 +42,7 @@
 
 </head>
 
-<body>
+<body style="background-color : white">
 
 	<div class="site-wrap">
 
@@ -98,10 +98,10 @@
 				</div>
 			</div>
 		</div>
+		
 
-
-
-		<table class="table table-borderless" style="width:1000px; margin-left : auto; margin-right:auto">
+		<table class="table table-borderless"
+			style="width: 1000px; margin-left: auto; margin-right: auto">
 			<thead>
 				<tr>
 				</tr>
@@ -114,21 +114,24 @@
 
 					if (!matchresult.getDATE().equals(past.getDATE())) {
 				%>
-
-
 				<tr
-					style="text-align: center; color: Snow; font-weight: bold; font-size: x-large">
+					style="text-align: center; color: black; font-weight: bold; font-size: x-large">
+					<td></td>
 					<td></td>
 					<td><%=matchresult.getDATE()%></td>
 					<td></td>
+					<td></td>
+
 				</tr>
 				<%
 					} else if (i == 1) {
 				%>
 				<tr
-					style="text-align: center; color: Snow; font-weight: bold; font-size: x-large">
+					style="text-align: center; color: black; font-weight: bold; font-size: x-large">
+					<td></td>
 					<td></td>
 					<td><%=matchresult.getDATE()%></td>
+					<td></td>
 					<td></td>
 				</tr>
 				<%
@@ -138,82 +141,123 @@
 				if (past.getHOMESCORE() > past.getAWAYSCORE()) {
 				%>
 
-				<tr style="text-align: center;">
-					<td style="color: RoyalBlue; font-weight: bold;"><%=past.getHOMETEAM()%></td>
-					<td style="color: white;">vs</td>
+				<tr style="text-align: center; font-weight: bold;">
+					<td style="text-align: right"><img
+						src="images/clubs/<%=past.getHOMECLUBID()%>c.png" width="40px" /></td>
+					<td style="color: RoyalBlue;"><%=past.getHOMETEAM()%></td>
+					<td style="color: black;">vs</td>
 					<td><%=past.getAWAYTEAM()%></td>
+					<td style="text-align: left"><img
+						src="images/clubs/<%=past.getAWAYCLUBID()%>c.png" width="40px" /></td>
 				</tr>
-				<tr style="text-align: center;">
-					<td style="color: RoyalBlue; font-weight: bold;"><%=past.getHOMESCORE()%></td>
+				<tr style="text-align: center; font-weight: bold;">
+					<td></td>
+					<td style="color: RoyalBlue; colspan: 2"><%=past.getHOMESCORE()%></td>
 					<td></td>
 					<td><%=past.getAWAYSCORE()%></td>
+					<td></td>
 				</tr>
 				<%
 					} else if (past.getHOMESCORE() < past.getAWAYSCORE()) {
 				%>
-				<tr style="text-align: center;">
+				<tr style="text-align: center; font-weight: bold;">
+					<td style="text-align: right"><img
+						src="images/clubs/<%=past.getHOMECLUBID()%>c.png" width="40px" /></td>
 					<td><%=past.getHOMETEAM()%></td>
-					<td style="color: white;">vs</td>
-					<td style="color: RoyalBlue; font-weight: bold;"><%=past.getAWAYTEAM()%></td>
+					<td style="color: black;">vs</td>
+					<td style="color: RoyalBlue;"><%=past.getAWAYTEAM()%></td>
+					<td style="text-align: left"><img
+						src="images/clubs/<%=past.getAWAYCLUBID()%>c.png" width="40px" /></td>
 				</tr>
-				<tr style="text-align: center;">
+				<tr style="text-align: center; font-weight: bold;">
+					<td></td>
 					<td><%=past.getHOMESCORE()%></td>
 					<td></td>
-					<td style="color: RoyalBlue; font-weight: bold;"><%=past.getAWAYSCORE()%></td>
+					<td style="color: RoyalBlue;"><%=past.getAWAYSCORE()%></td>
+					<td></td>
 				</tr>
 				<%
 					} else {
 				%>
-				<tr style="text-align: center; color: PaleGreen;">
+				<tr style="text-align: center; color: PaleGreen; font-weight: bold;">
+					<td style="text-align: right"><img
+						src="images/clubs/<%=past.getHOMECLUBID()%>c.png" width="40px" /></td>
 					<td><%=past.getHOMETEAM()%></td>
-					<td style="color: white;">vs</td>
+					<td style="color: black;">vs</td>
 					<td><%=past.getAWAYTEAM()%></td>
+					<td style="text-align: left"><img
+						src="images/clubs/<%=past.getAWAYCLUBID()%>c.png" width="40px" /></td>
 				</tr>
-				<tr style="text-align: center; color: PaleGreen;">
+				<tr style="text-align: center; color: PaleGreen; font-weight: bold;">
+					<td></td>
 					<td><%=past.getHOMESCORE()%></td>
 					<td></td>
 					<td><%=past.getAWAYSCORE()%></td>
+					<td></td>
 				</tr>
 				<%
 					}
+				
+				
 				if (matchresult.getHOMESCORE() > matchresult.getAWAYSCORE()) {
 				%>
 
-				<tr style="text-align: center;">
-					<td style="color: RoyalBlue; font-weight: bold;"><%=matchresult.getHOMETEAM()%></td>
-					<td style="color: white;">vs</td>
+				<tr style="text-align: center; font-weight: bold;">
+					<td style="text-align: right"><img
+						src="images/clubs/<%=matchresult.getHOMECLUBID()%>c.png"
+						width="40px" /></td>
+					<td style="color: RoyalBlue;"><%=matchresult.getHOMETEAM()%></td>
+					<td style="color: black;">vs</td>
 					<td><%=matchresult.getAWAYTEAM()%></td>
+					<td style="text-align: left"><img
+						src="images/clubs/<%=matchresult.getAWAYCLUBID()%>c.png" width="40px" /></td>
 				</tr>
-				<tr style="text-align: center;">
-					<td style="color: RoyalBlue; font-weight: bold;"><%=matchresult.getHOMESCORE()%></td>
+				<tr style="text-align: center; font-weight: bold;">
+					<td></td>
+					<td style="color: RoyalBlue;"><%=matchresult.getHOMESCORE()%></td>
 					<td></td>
 					<td><%=matchresult.getAWAYSCORE()%></td>
+					<td></td>
 				</tr>
 				<%
 					} else if (matchresult.getHOMESCORE() < matchresult.getAWAYSCORE()) {
 				%>
-				<tr style="text-align: center;">
+				<tr style="text-align: center; font-weight: bold;">
+					<td style="text-align: right"><img
+						src="images/clubs/<%=matchresult.getHOMECLUBID()%>c.png"
+						width="40px" /></td>
 					<td><%=matchresult.getHOMETEAM()%></td>
-					<td style="color: white;">vs</td>
-					<td style="color: RoyalBlue; font-weight: bold;"><%=matchresult.getAWAYTEAM()%></td>
+					<td style="color: black;">vs</td>
+					<td style="color: RoyalBlue;"><%=matchresult.getAWAYTEAM()%></td>
+					<td style="text-align: left"><img
+						src="images/clubs/<%=matchresult.getAWAYCLUBID()%>c.png" width="40px" /></td>
 				</tr>
-				<tr style="text-align: center;">
+				<tr style="text-align: center; font-weight: bold;">
+					<td></td>
 					<td><%=matchresult.getHOMESCORE()%></td>
 					<td></td>
-					<td style="color: RoyalBlue; font-weight: bold;"><%=matchresult.getAWAYSCORE()%></td>
+					<td style="color: RoyalBlue;"><%=matchresult.getAWAYSCORE()%></td>
+					<td></td>
 				</tr>
 				<%
 					} else {
 				%>
-				<tr style="text-align: center; color: PaleGreen;">
+				<tr style="text-align: center; color: PaleGreen; font-weight: bold;">
+					<td style="text-align: right"><img
+						src="images/clubs/<%=matchresult.getHOMECLUBID()%>c.png"
+						width="40px" /></td>
 					<td><%=matchresult.getHOMETEAM()%></td>
-					<td style="color: white;">vs</td>
+					<td style="color: black;">vs</td>
 					<td><%=matchresult.getAWAYTEAM()%></td>
+					<td style="text-align: left"><img
+						src="images/clubs/<%=matchresult.getAWAYCLUBID()%>c.png" width="40px" /></td>
 				</tr>
-				<tr style="text-align: center; color: PaleGreen;">
+				<tr style="text-align: center; color: PaleGreen; font-weight: bold;">
+					<td></td>
 					<td><%=matchresult.getHOMESCORE()%></td>
 					<td></td>
 					<td><%=matchresult.getAWAYSCORE()%></td>
+					<td></td>
 				</tr>
 				<%
 					}
@@ -224,41 +268,62 @@
 				if (matchresult.getHOMESCORE() > matchresult.getAWAYSCORE()) {
 				%>
 
-				<tr style="text-align: center;">
-					<td style="color: RoyalBlue; font-weight: bold;"><%=matchresult.getHOMETEAM()%></td>
-					<td style="color: white;">vs</td>
+				<tr style="text-align: center; font-weight: bold;">
+					<td style="text-align: right"><img
+						src="images/clubs/<%=matchresult.getHOMECLUBID()%>c.png"
+						width="40px" /></td>
+					<td style="color: RoyalBlue;"><%=matchresult.getHOMETEAM()%></td>
+					<td style="color: black;">vs</td>
 					<td><%=matchresult.getAWAYTEAM()%></td>
+					<td style="text-align: left"><img
+						src="images/clubs/<%=matchresult.getAWAYCLUBID()%>c.png" width="40px" /></td>
 				</tr>
-				<tr style="text-align: center;">
-					<td style="color: RoyalBlue; font-weight: bold;"><%=matchresult.getHOMESCORE()%></td>
+				<tr style="text-align: center; font-weight: bold;">
+					<td></td>
+					<td style="color: RoyalBlue;"><%=matchresult.getHOMESCORE()%></td>
 					<td></td>
 					<td><%=matchresult.getAWAYSCORE()%></td>
+					<td></td>
 				</tr>
 				<%
 					} else if (matchresult.getHOMESCORE() < matchresult.getAWAYSCORE()) {
 				%>
-				<tr style="text-align: center;">
+				<tr style="text-align: center; font-weight: bold;">
+					<td style="text-align: right"><img
+						src="images/clubs/<%=matchresult.getHOMECLUBID()%>c.png"
+						width="40px" />
 					<td><%=matchresult.getHOMETEAM()%></td>
-					<td style="color: white;">vs</td>
-					<td style="color: RoyalBlue; font-weight: bold;"><%=matchresult.getAWAYTEAM()%></td>
+					<td style="color: black;">vs</td>
+					<td style="color: RoyalBlue;"><%=matchresult.getAWAYTEAM()%></td>
+					<td style="text-align: left"><img
+						src="images/clubs/<%=matchresult.getAWAYCLUBID()%>c.png" width="40px" /></td>
 				</tr>
-				<tr style="text-align: center;">
+				<tr style="text-align: center; font-weight: bold;">
+					<td></td>
 					<td><%=matchresult.getHOMESCORE()%></td>
 					<td></td>
-					<td style="color: RoyalBlue; font-weight: bold;"><%=matchresult.getAWAYSCORE()%></td>
+					<td style="color: RoyalBlue;"><%=matchresult.getAWAYSCORE()%></td>
+					<td></td>
 				</tr>
 				<%
 					} else {
 				%>
-				<tr style="text-align: center; color: PaleGreen;">
+				<tr style="text-align: center; color: PaleGreen; font-weight: bold;">
+					<td style="text-align: right"><img
+						src="images/clubs/<%=matchresult.getHOMECLUBID()%>c.png"
+						width="40px" /></td>
 					<td><%=matchresult.getHOMETEAM()%></td>
-					<td style="color: white;">vs</td>
+					<td style="color: black;">vs</td>
 					<td><%=matchresult.getAWAYTEAM()%></td>
+					<td style="text-align: left"><img
+						src="images/clubs/<%=matchresult.getAWAYCLUBID()%>c.png" width="40px" /></td>
 				</tr>
-				<tr style="text-align: center; color: PaleGreen;">
+				<tr style="text-align: center; color: PaleGreen; font-weight: bold;">
+					<td></td>
 					<td><%=matchresult.getHOMESCORE()%></td>
 					<td></td>
 					<td><%=matchresult.getAWAYSCORE()%></td>
+					<td></td>
 				</tr>
 				<%
 					}
