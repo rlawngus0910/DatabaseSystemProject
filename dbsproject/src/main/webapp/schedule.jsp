@@ -5,13 +5,48 @@
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.List"%>
 <%@ page import="java.util.Date"%>
+<%@ page import="java.lang.String"%>
 
 <!DOCTYPE html>
 <html>
 <%
 	List<Schedule> schedulelist = new ScheduleDao().getSchedule();
+	String[] homeresult = new String[100000];
+	String[] awayresult = new String[100000];
+	int k=0;
+	int count=0;
+	
+	for(int i = 0; i < schedulelist.size(); i++){
+		Schedule result = schedulelist.get(i);
+		homeresult[i]=result.getHOMETEAM();
+		awayresult[i]=result.getAWAYTEAM();
+	}
 %>
 <head>
+
+<script type="text/javascript">
+	
+  function reply_click(clicked_id, clicked_name, clicked_value)
+  {
+	  swal({
+		  title: clicked_id + " vs " + clicked_name + "\n" + clicked_value ,
+		  text: "Do you ticketing now?",
+		  icon: "warning",
+		  buttons: true,
+		  dangerMode: true,
+		})
+		.then((willDelete) => {
+		  if (willDelete) {
+		    swal("Ticketing was succeessful.", {
+		      icon: "success",
+		    });
+		  } else {
+		    swal("Cancel the Ticketing");
+		  }
+		});
+  }
+</script>
+
 <title>Soccer &mdash; Website by Colorlib</title>
 <meta charset="utf-8">
 <meta name="viewport"
@@ -40,6 +75,8 @@
 
 <link rel="stylesheet" href="css/style.css">
 
+<link rel="stylesheet" href="css/modalstyle.css">
+
 </head>
 
 <body>
@@ -54,7 +91,6 @@
 			</div>
 			<div class="site-mobile-menu-body"></div>
 		</div>
-
 
 		<header class="site-navbar py-4" role="banner">
 
@@ -100,7 +136,7 @@
 				</div>
 			</div>
 		</div>
-
+		
 
 
 		<table class="table table-borderless" style="width:1000px; margin-left : auto; margin-right:auto">
@@ -138,21 +174,22 @@
 					}
 					
 				
-
 				if(i==1){%>
 				<tr style="text-align: center;">
 					<td style="font-weight: bold;"><%=past.getHOMETEAM()%></td>
-					<td><button type="button" class="btn btn-danger"><%=past.getTime().substring(0,5)%></button></td>
-					<td><%=past.getAWAYTEAM()%></td>
+					<td><input id ="<%=past.getHOMETEAM()%>" name = "<%=past.getAWAYTEAM()%>"style = "width:45pt" type="button" value="<%=past.getTime().substring(0,5)%>" onclick ="reply_click(this.id, this.name, this.value);"class="btn btn-primary"></td>
+					<td style="font-weight: bold;"><%=past.getAWAYTEAM()%></td>
+					
 					
 				</tr>
-				<%} %>
+				<% } %>
+				
 				<tr style="text-align: center;">
 					<td style="font-weight: bold;"><%=scheduleresult.getHOMETEAM()%></td>
-					<td><button type="button" class="btn btn-danger"><%=past.getTime().substring(0,5)%></button></td>
-					
-					<td><%=scheduleresult.getAWAYTEAM()%></td>
+					<td><input id="<%=scheduleresult.getHOMETEAM()%>" name = "<%=scheduleresult.getAWAYTEAM()%>"style = "width:45pt" type="button" value="<%=scheduleresult.getTime().substring(0,5)%>" onclick ="reply_click(this.id, this.name, this.value);" class="btn btn-primary" ></td>
+					<td style="font-weight: bold;"><%=scheduleresult.getAWAYTEAM()%></td>
 				</tr>
+				
 				<%
 					}
 				%>
@@ -162,7 +199,7 @@
 
 
 
-		<footer clas s="footer-section">
+		<footer class="footer-section">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-3">
@@ -241,7 +278,8 @@
 
 	</div>
 	<!-- .site-wrap -->
-
+	
+	<script src="js/sweetalert.js"></script>
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/jquery-migrate-3.0.1.min.js"></script>
 	<script src="js/jquery-ui.js"></script>

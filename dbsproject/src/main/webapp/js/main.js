@@ -321,8 +321,4 @@ jQuery(document).ready(function($) {
 		$("#bgndVideo").YTPlayer();
 	});
 
-
-	
-
 });
-
