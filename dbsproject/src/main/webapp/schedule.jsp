@@ -140,17 +140,16 @@
 				
 
 				if(i==1){%>
-				<tr style="text-align: center;">
-					<td style="font-weight: bold;"><%=past.getHOMETEAM()%></td>
+				<tr style="text-align: center; font-weight: bold;">
+					<td><%=past.getHOMETEAM()%></td>
 					<td><button type="button" class="btn btn-danger"><%=past.getTime().substring(0,5)%></button></td>
 					<td><%=past.getAWAYTEAM()%></td>
 					
 				</tr>
 				<%} %>
-				<tr style="text-align: center;">
-					<td style="font-weight: bold;"><%=scheduleresult.getHOMETEAM()%></td>
+				<tr style="text-align: center; font-weight: bold;">
+					<td><%=scheduleresult.getHOMETEAM()%></td>
 					<td><button type="button" class="btn btn-danger"><%=past.getTime().substring(0,5)%></button></td>
-					
 					<td><%=scheduleresult.getAWAYTEAM()%></td>
 				</tr>
 				<%
