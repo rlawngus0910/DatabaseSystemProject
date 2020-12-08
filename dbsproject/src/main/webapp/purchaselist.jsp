@@ -57,7 +57,7 @@
 			<div class="container">
 				<div class="d-flex align-items-center">
 					<div class="site-logo">
-						<a href="index.html"> <img
+						<a href="main.jsp"> <img
 							src="images/Premier_League-Logo.wine.png" alt="Logo">
 						</a>
 					</div>
@@ -66,12 +66,14 @@
 							role="navigation">
 							<ul
 								class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-								<li class="active"><a href="index.html" class="nav-link">Home</a></li>
-								<li><a href="Players.html" class="nav-link">Players</a></li>
-								<li><a href="Clubs.html" class="nav-link">Clubs</a></li>
-								<li><a href="Goods.html" class="nav-link">Goods</a></li>
-								<li><a href="Ticketing.html" class="nav-link">Ticketing</a></li>
-								<li><a href="Matches.html" class="nav-link">Matches</a></li>
+								<li><a href="main.jsp" class="nav-link">Home</a></li>
+								<li><a href="players.jsp" class="nav-link">Players</a></li>
+								<li><a href="clubs.jsp" class="nav-link">Clubs</a></li>
+								<li><a href="schedule.jsp" class="nav-link">schedule</a></li>
+								<li><a href="matches.jsp" class="nav-link">results</a></li>
+								<li><a href="goods.jsp" class="nav-link">Goods</a></li>
+								<li><a href="cart.jsp" class="nav-link">Cart</a></li>
+								<li class="active"><a href="purchaselist.jsp" class="nav-link">Purchase list</a></li>
 							</ul>
 						</nav>
 
@@ -87,7 +89,7 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-5 mx-auto text-center">
-            <h1 class="text-white">Purchaselist</h1>
+            <h1 class="text-white">Purchase list</h1>
             <p>Your Purchaselist</p>
           </div>
         </div>
@@ -95,7 +97,7 @@
     </div>
 
 		<div style = "background-color : white; padding-top: 10px;" class="container2">
-			<p style = "font-size : 30px; margin-left:200px;">Purchaselist</p>
+			<p style = "font-size : 30px; margin-left:200px;">Purchase list</p>
 			
 			<table class="table table-bordered table-hover"
 				style="text-align: center; border: 3px solid #dddddd; margin-top: 20px; margin-left: auto; margin-right: auto; width: 1500px;">

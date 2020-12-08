@@ -64,20 +64,22 @@
       <div class="container">
         <div class="d-flex align-items-center">
           <div class="site-logo">
-            <a href="index.html">
+            <a href="main.jsp">
               <img src="images/Premier_League-Logo.wine.png" alt="Logo">
             </a>
           </div>
           <div class="ml-auto">
             <nav class="site-navigation position-relative text-right" role="navigation">
-              <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li class="active"><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="matches.html" class="nav-link">Players</a></li>
-                <li><a href="players.html" class="nav-link">Clubs</a></li>
-                <li><a href="goods.jsp" class="nav-link">Goods</a></li>
-                <li><a href="contact.html" class="nav-link">Ticketing</a></li>
-                <li><a href="contact.html" class="nav-link">Matches</a></li>
-              </ul>
+							<ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+								<li class="active"><a href="main.jsp" class="nav-link">Home</a></li>
+								<li><a href="players.jsp" class="nav-link">Players</a></li>
+								<li><a href="clubs.jsp" class="nav-link">Clubs</a></li>
+								<li><a href="schedule.jsp" class="nav-link">schedule</a></li>
+								<li><a href="matches.jsp" class="nav-link">results</a></li>
+								<li><a href="goods.jsp" class="nav-link">Goods</a></li>
+								<li><a href="cart.jsp" class="nav-link">Cart</a></li>
+								<li><a href="purchaselist.jsp" class="nav-link">Purchase list</a></li>
+							</ul>
             </nav>
 
             <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right text-white"><span
