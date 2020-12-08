@@ -4,27 +4,35 @@ import java.util.Date;
 
 public class Matchresult {
 	
-	Integer MATCHID;
+	Integer HOMECLUBID;
+	Integer AWAYCLUBID;
 	Integer HOMESCORE;
 	Integer AWAYSCORE;
-	Integer HOMECLUB;
-	Integer AWAYCLUB;
+	String HOMETEAM;
+	String AWAYTEAM;
 	Date DATE;
-	public Matchresult(Integer mATCHID, Integer hOMESCORE, Integer aWAYSCORE, Integer hOMECLUB, Integer aWAYCLUB,
-			Date dATE) {
+	public Matchresult(Integer hOMECLUBID, Integer aWAYCLUBID, Integer hOMESCORE, Integer aWAYSCORE, String hOMETEAM,
+			String aWAYTEAM, Date dATE) {
 		super();
-		MATCHID = mATCHID;
+		HOMECLUBID = hOMECLUBID;
+		AWAYCLUBID = aWAYCLUBID;
 		HOMESCORE = hOMESCORE;
 		AWAYSCORE = aWAYSCORE;
-		HOMECLUB = hOMECLUB;
-		AWAYCLUB = aWAYCLUB;
+		HOMETEAM = hOMETEAM;
+		AWAYTEAM = aWAYTEAM;
 		DATE = dATE;
 	}
-	public Integer getMATCHID() {
-		return MATCHID;
+	public Integer getHOMECLUBID() {
+		return HOMECLUBID;
 	}
-	public void setMATCHID(Integer mATCHID) {
-		MATCHID = mATCHID;
+	public void setHOMECLUBID(Integer hOMECLUBID) {
+		HOMECLUBID = hOMECLUBID;
+	}
+	public Integer getAWAYCLUBID() {
+		return AWAYCLUBID;
+	}
+	public void setAWAYCLUBID(Integer aWAYCLUBID) {
+		AWAYCLUBID = aWAYCLUBID;
 	}
 	public Integer getHOMESCORE() {
 		return HOMESCORE;
@@ -38,17 +46,17 @@ public class Matchresult {
 	public void setAWAYSCORE(Integer aWAYSCORE) {
 		AWAYSCORE = aWAYSCORE;
 	}
-	public Integer getHOMECLUB() {
-		return HOMECLUB;
+	public String getHOMETEAM() {
+		return HOMETEAM;
 	}
-	public void setHOMECLUB(Integer hOMECLUB) {
-		HOMECLUB = hOMECLUB;
+	public void setHOMETEAM(String hOMETEAM) {
+		HOMETEAM = hOMETEAM;
 	}
-	public Integer getAWAYCLUB() {
-		return AWAYCLUB;
+	public String getAWAYTEAM() {
+		return AWAYTEAM;
 	}
-	public void setAWAYCLUB(Integer aWAYCLUB) {
-		AWAYCLUB = aWAYCLUB;
+	public void setAWAYTEAM(String aWAYTEAM) {
+		AWAYTEAM = aWAYTEAM;
 	}
 	public Date getDATE() {
 		return DATE;
@@ -56,7 +64,6 @@ public class Matchresult {
 	public void setDATE(Date dATE) {
 		DATE = dATE;
 	}
-	
 	
 
 }
