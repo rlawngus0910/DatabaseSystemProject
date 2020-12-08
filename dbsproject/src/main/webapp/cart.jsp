@@ -80,7 +80,7 @@
 								<li><a href="Clubs.html" class="nav-link">Clubs</a></li>
 								<li><a href="Goods.html" class="nav-link">Goods</a></li>
 								<li><a href="Ticketing.html" class="nav-link">Ticketing</a></li>
-								<li><a href="Matches.html" class="nav-link">Matches</a></li>
+								<li><a href="purchaselist.jsp?userID=<%=userID %>" class="nav-link">Matches</a></li>
 							</ul>
 						</nav>
 
@@ -133,7 +133,7 @@
 					<%=carts.getAmount() %>
 					<button type="button" class="btn btn-primary py-2 px-2 mr-2" style="margin-left:0.5rem;"onclick="location.href = 'http://localhost:8080/dbsproject/AddAmountAction?userID=<%=userID %>&cartID=<%=carts.getCARTID() %>&amount=<%=carts.getAmount()%>'">+</button></th>
 					<th style = "vertical-align : middle"><%=carts.getAmount() * carts.getPrice() %></th>
-					<th style = "vertical-align : middle"><button type="button" class="btn btn-primary py-2 px-2 mr-2">Buy</button>
+					<th style = "vertical-align : middle"><button type="button" class="btn btn-primary py-2 px-2 mr-2" onclick="location.href = 'http://localhost:8080/dbsproject/CartToBuyAction?userID=<%=userID %>&cartID=<%=carts.getCARTID() %>'">Buy</button>
 					    <button type="button" class="btn btn-primary py-2 px-2 mr-2" onclick="location.href = 'http://localhost:8080/dbsproject/DeleteGoodsAction?userID=<%=userID %>&cartID=<%=carts.getCARTID() %>'">Delete</button></th>
 					</tr>
 					<%
@@ -145,7 +145,7 @@
 			<p style = "text-align:right; padding-right:300px;">Subtotal : <%=subtotal %> </p>
 			
 			<div style = "text-align: center; margin-top: 50px; padding-bottom: 30px; margin-left : auto; margin-right : auto;"id="button">
-			<button type="button" class="btn btn-primary py-2 px-2 mr-2" >Buy All</button>
+			<button type="button" class="btn btn-primary py-2 px-2 mr-2" onclick="location.href = 'http://localhost:8080/dbsproject/BuyAllCartAction?userID=<%=userID %>'">Buy All</button>
 			<button type="button" class="btn btn-primary py-2 px-2 mr-2" onclick="location.href = 'goods.jsp'">return to shop</button>
 			<button type="button" class="btn btn-primary py-2 px-2 mr-2" onclick="location.href = 'http://localhost:8080/dbsproject/DeleteAllGoodsAction?userID=<%=userID %>'">Delete All</button>
 			</div>

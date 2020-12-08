@@ -39,7 +39,13 @@
 </head>
 
 <body>
+<%
+	String userID = null;
+	if(session.getAttribute("userID") != null){
+		userID = (String) session.getAttribute("userID");
+	}
 
+%>
 	<div class="site-wrap">
 
 		<div class="site-mobile-menu site-navbar-target">
@@ -97,6 +103,39 @@
 		<div style = "background-color : white; padding-top: 10px;" class="container2">
 			<p style = "font-size : 30px; margin-left:200px;">Purchaselist</p>
 			
+			<table class="table table-bordered table-hover"
+				style="text-align: center; border: 3px solid #dddddd; margin-top: 20px; margin-left: auto; margin-right: auto; width: 1500px;">
+				<thead>
+					<tr>
+						<th style="background-color: #fafafa; color: #000000; width :150px ">Image</th>
+						<th style="background-color: #fafafa; color: #000000; width :150px">Name</th>
+						<th style="background-color: #fafafa; color: #000000; width: 100px">Price</th>
+						<th style="background-color: #fafafa; color: #000000; width: 50px">Quantity</th>
+						<th style="background-color: #fafafa; color: #000000; width: 100px">Total Price</th>
+					</tr>
+					<tbody>
+					<%
+					PurchaselistDao dao = new PurchaselistDao();
+					String ID = request.getParameter("userID");
+					List<Purchaselist> plist = dao.getPurchaselist(ID);
+					int subtotal = 0;
+					for(int i=0;i<plist.size();i++){
+						Purchaselist purchase = plist.get(i);
+					%>
+					<tr>
+						<th><img src="images/goods/<%=purchase.getImg() %>"></th>
+						<th style = "vertical-align : middle"><%=purchase.getName() %></th>
+						<th style = "vertical-align : middle"><%=purchase.getPrice() %></th>
+						<th style = "vertical-align : middle"><%=purchase.getAmount() %></th>
+						<th style = "vertical-align : middle"><%=purchase.getAmount() * purchase.getPrice() %></th>
+					</tr>
+					<%
+						subtotal += purchase.getAmount() * purchase.getPrice();
+					}
+					%>
+					</tbody>
+			</table>
+			<p style = "text-align:right; padding-right:300px;">Subtotal : <%=subtotal %> </p>
 			<table class="table table-bordered table-hover"
 				style="text-align: center; border: 3px solid #dddddd; margin-top: 20px; margin-left: auto; margin-right: auto; width: 1500px;">
 				<thead>
