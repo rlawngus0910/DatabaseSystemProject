@@ -9,7 +9,7 @@
 	List<Club> clublist = new ClubDao().getClub();
 %>
 <head>
-<title>Soccer &mdash; Website by Colorlib</title>
+<title>English Premier League</title>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
