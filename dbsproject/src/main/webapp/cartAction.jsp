@@ -16,7 +16,7 @@
 <body>
 <%
 	CartDao dao = new CartDao();
-	String userID = request.ㅎetParameter("userID");
+	String userID = request.getParameter("userID");
 	String goodsID = request.getParameter("goodsID");
 	int gID = Integer.parseInt(goodsID);
 	int result = dao.addCart(userID, gID);
