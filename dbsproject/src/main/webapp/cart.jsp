@@ -127,13 +127,13 @@
 					%>
 					<tr>
 					<th><img src="images/goods/<%=carts.getImg() %>"></th>
-					<th><%=carts.getName() %></th>
-					<th><%=carts.getPrice() %></th>
-					<th><button type="button" class="btn btn-primary py-2 px-2 mr-2"  onclick="location.href = 'http://localhost:8080/dbsproject/MinusAmountAction?userID=<%=userID %>&cartID=<%=carts.getCARTID() %>&amount=<%=carts.getAmount()%>'">-</button>
+					<th style = "vertical-align : middle"><%=carts.getName() %></th>
+					<th style = "vertical-align : middle"><%=carts.getPrice() %></th>
+					<th style = "vertical-align : middle"><button type="button" class="btn btn-primary py-2 px-2 mr-2"  onclick="location.href = 'http://localhost:8080/dbsproject/MinusAmountAction?userID=<%=userID %>&cartID=<%=carts.getCARTID() %>&amount=<%=carts.getAmount()%>'">-</button>
 					<%=carts.getAmount() %>
-					<button type="button" class="btn btn-primary py-2 px-2 mr-2" onclick="location.href = 'http://localhost:8080/dbsproject/AddAmountAction?userID=<%=userID %>&cartID=<%=carts.getCARTID() %>&amount=<%=carts.getAmount()%>'">+</button></th>
-					<th><%=carts.getAmount() * carts.getPrice() %></th>
-					<th><button type="button" class="btn btn-primary py-2 px-2 mr-2">Buy</button>
+					<button type="button" class="btn btn-primary py-2 px-2 mr-2" style="margin-left:0.5rem;"onclick="location.href = 'http://localhost:8080/dbsproject/AddAmountAction?userID=<%=userID %>&cartID=<%=carts.getCARTID() %>&amount=<%=carts.getAmount()%>'">+</button></th>
+					<th style = "vertical-align : middle"><%=carts.getAmount() * carts.getPrice() %></th>
+					<th style = "vertical-align : middle"><button type="button" class="btn btn-primary py-2 px-2 mr-2">Buy</button>
 					    <button type="button" class="btn btn-primary py-2 px-2 mr-2" onclick="location.href = 'http://localhost:8080/dbsproject/DeleteGoodsAction?userID=<%=userID %>&cartID=<%=carts.getCARTID() %>'">Delete</button></th>
 					</tr>
 					<%
