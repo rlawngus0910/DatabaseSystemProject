@@ -80,8 +80,8 @@
 								<li><a href="schedule.jsp" class="nav-link">schedule</a></li>
 								<li><a href="matches.jsp" class="nav-link">results</a></li>
 								<li><a href="goods.jsp" class="nav-link">Goods</a></li>
-								<li class="active"><a href="cart.jsp" class="nav-link">Cart</a></li>
-								<li><a href="purchaselist.jsp" class="nav-link">Purchase list</a></li>
+								<li class="active"><a href="cart.jsp?<%=userID %>" class="nav-link">Cart</a></li>
+								<li><a href="purchaselist.jsp?<%=userID %>" class="nav-link">Purchase list</a></li>
 							</ul>
 						</nav>
 
@@ -134,7 +134,7 @@
 					<%=carts.getAmount() %>
 					<button type="button" class="btn btn-primary py-2 px-2 mr-2" style="margin-left:0.5rem;"onclick="location.href = 'http://localhost:8080/dbsproject/AddAmountAction?userID=<%=userID %>&cartID=<%=carts.getCARTID() %>&amount=<%=carts.getAmount()%>'">+</button></th>
 					<th style = "vertical-align : middle"><%=carts.getAmount() * carts.getPrice() %></th>
-					<th style = "vertical-align : middle"><button type="button" class="btn btn-primary py-2 px-2 mr-2">Buy</button>
+					<th style = "vertical-align : middle"><button type="button" class="btn btn-primary py-2 px-2 mr-2" onclick="location.href = 'http://localhost:8080/dbsproject/CartToBuyAction?userID=<%=userID %>&cartID=<%=carts.getCARTID() %>'">Buy</button>
 					    <button type="button" class="btn btn-primary py-2 px-2 mr-2" onclick="location.href = 'http://localhost:8080/dbsproject/DeleteGoodsAction?userID=<%=userID %>&cartID=<%=carts.getCARTID() %>'">Delete</button></th>
 					</tr>
 					<%
@@ -146,7 +146,7 @@
 			<p style = "text-align:right; padding-right:300px;">Subtotal : <%=subtotal %> </p>
 			
 			<div style = "text-align: center; margin-top: 50px; padding-bottom: 30px; margin-left : auto; margin-right : auto;"id="button">
-			<button type="button" class="btn btn-primary py-2 px-2 mr-2" >Buy All</button>
+			<button type="button" class="btn btn-primary py-2 px-2 mr-2" onclick="location.href = 'http://localhost:8080/dbsproject/BuyAllCartAction?userID=<%=userID %>'">Buy All</button>
 			<button type="button" class="btn btn-primary py-2 px-2 mr-2" onclick="location.href = 'goods.jsp'">return to shop</button>
 			<button type="button" class="btn btn-primary py-2 px-2 mr-2" onclick="location.href = 'http://localhost:8080/dbsproject/DeleteAllGoodsAction?userID=<%=userID %>'">Delete All</button>
 			</div>
