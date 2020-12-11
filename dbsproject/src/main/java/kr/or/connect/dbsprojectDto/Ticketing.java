@@ -6,13 +6,22 @@ public class Ticketing {
 	Integer SID;
 	Integer PRICE;
 	String MEMBER;
-	public Ticketing(Integer tICKETINGID, Integer sID, Integer pRICE, String mEMBER) {
+	String HOMETEAM;
+	String AWAYTEAM;
+	String DATE;
+	String TIME;
+	
+	
+	public Ticketing(Integer sID, String hOMETEAM, String aWAYTEAM, String dATE, String tIME) {
 		super();
-		TICKETINGID = tICKETINGID;
 		SID = sID;
-		PRICE = pRICE;
-		MEMBER = mEMBER;
+		HOMETEAM = hOMETEAM;
+		AWAYTEAM = aWAYTEAM;
+		DATE = dATE;
+		TIME = tIME;
 	}
+	
+
 	public Integer getTICKETINGID() {
 		return TICKETINGID;
 	}
@@ -37,6 +46,31 @@ public class Ticketing {
 	public void setMEMBER(String mEMBER) {
 		MEMBER = mEMBER;
 	}
+	public String getHOMETEAM() {
+		return HOMETEAM;
+	}
+	public void setHOMETEAM(String hOMETEAM) {
+		HOMETEAM = hOMETEAM;
+	}
+	public String getAWAYTEAM() {
+		return AWAYTEAM;
+	}
+	public void setAWAYTEAM(String aWAYTEAM) {
+		AWAYTEAM = aWAYTEAM;
+	}
+	public String getDATE() {
+		return DATE;
+	}
+	public void setDATE(String dATE) {
+		DATE = dATE;
+	}
+	public String getTIME() {
+		return TIME;
+	}
+	public void setTIME(String tIME) {
+		TIME = tIME;
+	}
+	
 	
 	
 

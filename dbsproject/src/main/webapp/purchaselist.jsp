@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ page import="kr.or.connect.dbsprojectDto.Purchaselist"%>
 <%@ page import="kr.or.connect.dbsprojectDao.PurchaselistDao"%>
+<%@ page import="kr.or.connect.dbsprojectDto.Ticketing"%>
+<%@ page import="kr.or.connect.dbsprojectDao.TicketingDao"%>
 <%@ page import="java.util.List"%>
 <!DOCTYPE html>
 <html>
@@ -78,8 +80,8 @@
 								<li><a href="schedule.jsp" class="nav-link">schedule</a></li>
 								<li><a href="matches.jsp" class="nav-link">results</a></li>
 								<li><a href="goods.jsp" class="nav-link">Goods</a></li>
-								<li><a href="cart.jsp" class="nav-link">Cart</a></li>
-								<li class="active"><a href="purchaselist.jsp" class="nav-link">Purchase list</a></li>
+								<li><a href="cart.jsp?userID=<%=userID%>" class="nav-link">Cart</a></li>
+								<li class="active"><a href="purchaselist.jsp?userID=<%=userID%>" class="nav-link">Purchase list</a></li>
 							</ul>
 						</nav>
 
@@ -138,29 +140,41 @@
 					</tbody>
 			</table>
 			<p style = "text-align:right; padding-right:300px;">Subtotal : <%=subtotal %> </p>
+			
+			<p style = "font-size : 30px; margin-left:200px;">Ticketing list</p>
 			<table class="table table-bordered table-hover"
 				style="text-align: center; border: 3px solid #dddddd; margin-top: 20px; margin-left: auto; margin-right: auto; width: 1500px;">
 				<thead>
 					<tr>
-						<th style="background-color: #fafafa; color: #000000; width :150px ">Image</th>
-						<th style="background-color: #fafafa; color: #000000; width :150px">Name</th>
-						<th style="background-color: #fafafa; color: #000000; width: 100px">Price</th>
-						<th style="background-color: #fafafa; color: #000000; width: 50px">Quantity</th>
-						<th style="background-color: #fafafa; color: #000000; width: 100px">Total Price</th>
+						<th style="background-color: #fafafa; color: #000000; width :150px">Hometeam</th>
+						<th style="background-color: #fafafa; color: #000000; width: 20px"> </th>
+						<th style="background-color: #fafafa; color: #000000; width: 150px">Awayteam</th>
+						<th style="background-color: #fafafa; color: #000000; width: 100px">Date</th>
+						<th style="background-color: #fafafa; color: #000000; width: 100px">Time</th>
+						
 					</tr>
 					<tbody>
+					<%
+					TicketingDao dao1 = new TicketingDao();
+					List<Ticketing> tlist = dao1.getTicketinglist(ID);
+					for(int i=0;i<tlist.size();i++){
+						Ticketing ticketing = tlist.get(i);
+					%>
 					<tr>
-					<th></th>
-					<th></th>
-					<th></th>
-					<th></th>
-					<th></th>
+						<th style = "vertical-align : middle"><%=ticketing.getHOMETEAM() %></th>
+						<th>vs</th>
+						<th style = "vertical-align : middle"><%=ticketing.getAWAYTEAM() %></th>
+						<th style = "vertical-align : middle"><%=ticketing.getDATE() %></th>
+						<th style = "vertical-align : middle"><%=ticketing.getTIME() %></th>
 					</tr>
+					<%
+					}
+					%>
 					</tbody>
 			</table>
 			
 			<div style = "text-align: center; margin-top: 50px; padding-bottom: 30px; margin-left : auto; margin-right : auto;"id="button">
-			<button type="button" class="btn btn-primary py-2 px-2 mr-2" >return to shop</button>
+			<button onclick = "location.href = 'goods.jsp'" type="button" class="btn btn-primary py-2 px-2 mr-2" >return to shop</button>
 			</div>
 		</div>
 
