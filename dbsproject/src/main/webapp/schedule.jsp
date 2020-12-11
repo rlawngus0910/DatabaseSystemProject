@@ -26,8 +26,15 @@
 
 <script type="text/javascript">
 	
-  function reply_click(clicked_id, clicked_name, clicked_value)
+	function page_href() {
+
+	location.href = "purchaselist.jsp";
+
+	}
+	
+  function reply_click(clicked_id, clicked_name, clicked_value, clicked_sid, clicked_memberid)
   {
+	  
 	  swal({
 		  title: clicked_id + " vs " + clicked_name + "\n" + clicked_value ,
 		  text: "Do you ticketing now?",
@@ -37,14 +44,14 @@
 		})
 		.then((willDelete) => {
 		  if (willDelete) {
-		    swal("Ticketing was succeessful.", {
-		      icon: "success",
-		    });
+			  document.location.href = "http://localhost:8080/dbsproject/TicketingAction?" + "sid=" + clicked_sid + "&price=58000" + "&member=" + clicked_memberid;
 		  } else {
 		    swal("Cancel the Ticketing");
 		  }
 		});
+	  
   }
+  
 </script>
 
 <title>English Premier League</title>
@@ -80,6 +87,11 @@
 </head>
 
 <body>
+<%String userID = null;
+if(session.getAttribute("userID") != null){
+    userID = (String) session.getAttribute("userID");    
+} 
+%>
 
 	<div class="site-wrap">
 
@@ -150,7 +162,7 @@
 						
 					Schedule past = schedulelist.get(i-1);
 					Schedule scheduleresult = schedulelist.get(i);
-					
+					String memberID = userID;
 					
 					if (!scheduleresult.getDATE().equals(past.getDATE())) {
 				%>
@@ -177,7 +189,7 @@
 				if(i==1){%>
 				<tr style="text-align: center;">
 					<td style="font-weight: bold;"><%=past.getHOMETEAM()%></td>
-					<td><input id ="<%=past.getHOMETEAM()%>" name = "<%=past.getAWAYTEAM()%>"style = "width:45pt" type="button" value="<%=past.getTime().substring(0,5)%>" onclick ="reply_click(this.id, this.name, this.value);"class="btn btn-primary"></td>
+					<td><input id ="<%=past.getHOMETEAM()%>" name = "<%=past.getAWAYTEAM()%>"style = "width:45pt" type="button" value="<%=past.getTime().substring(0,5)%>" onclick ="reply_click(this.id, this.name, this.value, <%=i%>, '<%=memberID %>');"class="btn btn-primary"></td>
 					<td style="font-weight: bold;"><%=past.getAWAYTEAM()%></td>
 					
 					
@@ -186,7 +198,7 @@
 				
 				<tr style="text-align: center;">
 					<td style="font-weight: bold;"><%=scheduleresult.getHOMETEAM()%></td>
-					<td><input id="<%=scheduleresult.getHOMETEAM()%>" name = "<%=scheduleresult.getAWAYTEAM()%>"style = "width:45pt" type="button" value="<%=scheduleresult.getTime().substring(0,5)%>" onclick ="reply_click(this.id, this.name, this.value);" class="btn btn-primary" ></td>
+					<td><input id="<%=scheduleresult.getHOMETEAM()%>" name = "<%=scheduleresult.getAWAYTEAM()%>"style = "width:45pt" type="button" value="<%=scheduleresult.getTime().substring(0,5)%>" onclick ="reply_click(this.id, this.name, this.value, <%=i+1%>, '<%=memberID %>');" class="btn btn-primary" ></td>
 					<td style="font-weight: bold;"><%=scheduleresult.getAWAYTEAM()%></td>
 				</tr>
 				

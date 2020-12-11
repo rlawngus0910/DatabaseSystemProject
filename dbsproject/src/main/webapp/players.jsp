@@ -136,7 +136,7 @@
         	<td style = "vertical-align : middle"><%= player.getCLUB() %></td>
         	<td style = "vertical-align : middle"><%= player.getBACKNO() %></td>
         	<td style = "vertical-align : middle"><%= player.getNATION() %></td>
-        	<td style = "vertical-align : middle"><%= player.getBIRTH() %></td>
+        	<td style = "vertical-align : middle; font-size : 20px"><%= player.getBIRTH() %></td>
         </tr>
       <%
       	 }
@@ -156,7 +156,7 @@
         	<td style = "vertical-align : middle"><%= player.getCLUB() %></td>
         	<td style = "vertical-align : middle"><%= player.getBACKNO() %></td>
         	<td style = "vertical-align : middle"><%= player.getNATION() %></td>
-        	<td style = "vertical-align : middle"><%= player.getBIRTH() %></td>
+        	<td style = "vertical-align : middle; font-size : 20px"><%= player.getBIRTH() %></td>
         </tr>
       <%
           }
