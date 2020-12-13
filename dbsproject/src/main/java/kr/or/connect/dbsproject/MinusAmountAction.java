@@ -36,7 +36,7 @@ public class MinusAmountAction extends HttpServlet {
 		if(amount == 0) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('수량을 감소할 수 없습니다.')");
+			script.println("alert('Quantity cannot be reduced.')");
 			script.println("location.href = history.back()");
 			script.println("</script>");
 		}
@@ -46,14 +46,14 @@ public class MinusAmountAction extends HttpServlet {
 			if(result == 1) {
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
-				script.println("alert('수량이 감소했습니다.')");
+				script.println("alert('The quantity has decreased.')");
 				script.println("window.location = document.referrer");
 				script.println("</script>");
 			}
 			else if(result == -1) {
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
-				script.println("alert('오류')");
+				script.println("alert('error')");
 				script.println("history.back()");
 				script.println("</script>");
 			}

@@ -38,14 +38,14 @@ public class AddAmountAction extends HttpServlet {
 		if(result == 1) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('수량이 증가했습니다.')");
+			script.println("alert('The quantity has increased.')");
 			script.println("window.location = document.referrer");
 			script.println("</script>");
 		}
 		else if(result == -1) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('오류')");
+			script.println("alert('error')");
 			script.println("history.back()");
 			script.println("</script>");
 		}
