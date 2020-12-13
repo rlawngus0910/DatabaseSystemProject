@@ -39,6 +39,7 @@ public class ScheduleDao {
 
 				schedule = new Schedule(scheduleID, hometeam, awayteam, date, time);
 				list.add(schedule);
+				
 			}
 	
 		}catch(Exception e) {
