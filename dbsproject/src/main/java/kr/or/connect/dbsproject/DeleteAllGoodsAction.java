@@ -32,14 +32,14 @@ public class DeleteAllGoodsAction extends HttpServlet {
 		if(result == 1) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('장바구니에서 모두 삭제되었습니다.')");
+			script.println("alert('All deleted from your cart.')");
 			script.println("window.location = document.referrer");
 			script.println("</script>");
 		}
 		else if(result == -1) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('오류')");
+			script.println("alert('error')");
 			script.println("history.back()");
 			script.println("</script>");
 		}

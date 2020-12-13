@@ -41,14 +41,14 @@ public class JoinAction extends HttpServlet {
 		if(result == -1) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('이미 존재하는 아이디입니다.')");
+			script.println("alert('The ID already exists.')");
 			script.println("history.back()");
 			script.println("</script>");
 		}
 		else {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('회원가입이 완료되었습니다.')");
+			script.println("alert('registration is complete.')");
 			script.println("location.href = 'main.jsp'");
 			script.println("</script>");
 		}

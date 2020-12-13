@@ -38,14 +38,14 @@ public class CartToBuyAction extends HttpServlet {
 			if(cresult != 1) System.out.println("오류");
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('구매가 완료되었습니다.')");
+			script.println("alert('Your purchase is complete.')");
 			script.println("window.location = document.referrer");
 			script.println("</script>");
 		}
 		else if(result == -1) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('오류')");
+			script.println("alert('error')");
 			script.println("history.back()");
 			script.println("</script>");
 		}
