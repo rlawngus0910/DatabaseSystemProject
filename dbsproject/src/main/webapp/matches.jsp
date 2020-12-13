@@ -43,7 +43,12 @@
 </head>
 
 <body style="background-color : white">
-
+<%
+    String userID = null;
+    if(session.getAttribute("userID") != null){
+        userID = (String) session.getAttribute("userID");
+    }
+%>
 	<div class="site-wrap">
 
 		<div class="site-mobile-menu site-navbar-target">
@@ -76,8 +81,8 @@
 								<li><a href="schedule.jsp" class="nav-link">schedule</a></li>
 								<li class="active"><a href="matches.jsp" class="nav-link">results</a></li>
 								<li><a href="goods.jsp" class="nav-link">Goods</a></li>
-								<li><a href="cart.jsp" class="nav-link">Cart</a></li>
-								<li><a href="purchaselist.jsp" class="nav-link">Purchase list</a></li>
+								<li><a href="cart.jsp?userID=<%=userID %>" class="nav-link">Cart</a></li>
+								<li><a href="purchaselist.jsp=<%=userID %>" class="nav-link">Purchase list</a></li>
 							</ul>
 						</nav>
 
