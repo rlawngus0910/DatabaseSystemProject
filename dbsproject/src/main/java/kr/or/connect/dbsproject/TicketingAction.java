@@ -38,14 +38,14 @@ public class TicketingAction extends HttpServlet {
 		if(result == 1) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('수량이 증가했습니다.')");
+			script.println("alert('Success!')");
 			script.println("window.location = document.referrer");
 			script.println("</script>");
 		}
 		else if(result == -1) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('오류')");
+			script.println("alert('Login please')");
 			script.println("history.back()");
 			script.println("</script>");
 		}

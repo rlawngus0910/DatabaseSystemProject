@@ -11,26 +11,12 @@
 <html>
 <%
 	List<Schedule> schedulelist = new ScheduleDao().getSchedule();
-	String[] homeresult = new String[100000];
-	String[] awayresult = new String[100000];
-	int k=0;
-	int count=0;
 	
-	for(int i = 0; i < schedulelist.size(); i++){
-		Schedule result = schedulelist.get(i);
-		homeresult[i]=result.getHOMETEAM();
-		awayresult[i]=result.getAWAYTEAM();
-	}
 %>
 <head>
 
 <script type="text/javascript">
 	
-	function page_href() {
-
-	location.href = "purchaselist.jsp";
-
-	}
 	
   function reply_click(clicked_id, clicked_name, clicked_value, clicked_sid, clicked_memberid)
   {

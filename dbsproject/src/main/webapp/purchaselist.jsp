@@ -139,7 +139,7 @@
 					%>
 					</tbody>
 			</table>
-			<p style = "text-align:right; padding-right:300px;">Subtotal : <%=subtotal %> </p>
+			<p style = "text-align:right; padding-right:200px;">Subtotal : <%=subtotal %> </p>
 			
 			<p style = "font-size : 30px; margin-left:200px;">Ticketing list</p>
 			<table class="table table-bordered table-hover"

@@ -81,7 +81,7 @@
 								<li><a href="matches.jsp" class="nav-link">results</a></li>
 								<li><a href="goods.jsp" class="nav-link">Goods</a></li>
 								<li class="active"><a href="cart.jsp?<%=userID %>" class="nav-link">Cart</a></li>
-								<li><a href="purchaselist.jsp?<%=userID %>" class="nav-link">Purchase list</a></li>
+								<li><a href="purchaselist.jsp?userID=<%=userID %>" class="nav-link">Purchase list</a></li>
 							</ul>
 						</nav>
 
@@ -143,7 +143,7 @@
 					%>
 					</tbody>
 			</table>
-			<p style = "text-align:right; padding-right:300px;">Subtotal : <%=subtotal %> </p>
+			<p style = "text-align:right; padding-right:200px;">Subtotal : <%=subtotal %> </p>
 			
 			<div style = "text-align: center; margin-top: 50px; padding-bottom: 30px; margin-left : auto; margin-right : auto;"id="button">
 			<button type="button" class="btn btn-primary py-2 px-2 mr-2" onclick="location.href = 'http://localhost:8080/dbsproject/BuyAllCartAction?userID=<%=userID %>'">Buy All</button>
