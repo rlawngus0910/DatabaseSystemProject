@@ -139,7 +139,7 @@
                   <a href="#"><%=goods.getGOODSNAME() %></a>
                 </h4>
                 <p class="card-text">Price(￦) : <%=goods.getGOODSPRICE() %> </p>
-                <button type="button" class="btn btn-primary py-3 px-4 mr-3" >Buy Now</button>
+                <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="location.href = 'http://localhost:8080/dbsproject/BuyAction?goodsID=<%=goods.getGOODSID() %>&userID=<%=userID %>'">Buy Now</button>
                 <button type="submit" class="btn btn-primary py-3 px-4 mr-3" onclick="location.href = 'cartAction.jsp?goodsID=<%=goods.getGOODSID() %>&userID=<%=userID %>'">Add to Cart</button>
               </div>
               <div class="card-footer">
@@ -161,7 +161,7 @@
                   <a href="#"><%=goods.getGOODSNAME() %></a>
                 </h4>
                 <p class="card-text">Price(￦) : <%=goods.getGOODSPRICE() %> </p>
-                <button type="button" class="btn btn-primary py-3 px-4 mr-3" >Buy Now</button>
+                <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="location.href = 'http://localhost:8080/dbsproject/BuyAction?goodsID=<%=goods.getGOODSID() %>&userID=<%=userID %>'">Buy Now</button>
                 <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="location.href = 'cartAction.jsp?goodsID=<%=goods.getGOODSID() %>&userID=<%=userID %>'" >Add to Cart</button>
               </div>
               <div class="card-footer">
@@ -183,7 +183,7 @@
                   <a href="#"><%=goods.getGOODSNAME() %></a>
                 </h4>
                 <p class="card-text">Price(￦) : <%=goods.getGOODSPRICE() %> </p>
-                <button type="button" class="btn btn-primary py-3 px-4 mr-3" >Buy Now</button>
+                <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="location.href = 'http://localhost:8080/dbsproject/BuyAction?goodsID=<%=goods.getGOODSID() %>&userID=<%=userID %>'" >Buy Now</button>
                 <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="location.href = 'cartAction.jsp?goodsID=<%=goods.getGOODSID() %>&userID=<%=userID %>'" >Add to Cart</button>
               </div>
               <div class="card-footer">
@@ -205,7 +205,7 @@
                   <a href="#"><%=goods.getGOODSNAME() %></a>
                 </h4>
                 <p class="card-text">Price(￦) : <%=goods.getGOODSPRICE() %> </p>
-                <button type="button" class="btn btn-primary py-3 px-4 mr-3" >Buy Now</button>
+                <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="location.href = 'http://localhost:8080/dbsproject/BuyAction?goodsID=<%=goods.getGOODSID() %>&userID=<%=userID %>'">Buy Now</button>
                 <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="location.href = 'cartAction.jsp?goodsID=<%=goods.getGOODSID() %>&userID=<%=userID %>'" >Add to Cart</button>
               </div>
               <div class="card-footer">
@@ -227,7 +227,7 @@
                   <a href="#"><%=goods.getGOODSNAME() %></a>
                 </h4>
                 <p class="card-text">Price(￦) : <%=goods.getGOODSPRICE() %> </p>
-                <button type="button" class="btn btn-primary py-3 px-4 mr-3" >Buy Now</button>
+                <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="location.href = 'http://localhost:8080/dbsproject/BuyAction?goodsID=<%=goods.getGOODSID() %>&userID=<%=userID %>'">Buy Now</button>
                 <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="location.href = 'cartAction.jsp?goodsID=<%=goods.getGOODSID() %>&userID=<%=userID %>'">Add to Cart</button>
               </div>
               <div class="card-footer">
@@ -250,7 +250,7 @@
                   <a href="#"><%=goods.getGOODSNAME() %></a>
                 </h4>
                 <p class="card-text">Price(￦) : <%=goods.getGOODSPRICE() %> </p>
-                <button type="button" class="btn btn-primary py-3 px-4 mr-3" >Buy Now</button>
+                <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="alert('로그인이 필요합니다.')">Buy Now</button>
                 <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="alert('로그인이 필요합니다.')">Add to Cart</button>
               </div>
               <div class="card-footer">
