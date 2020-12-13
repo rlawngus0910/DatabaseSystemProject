@@ -124,7 +124,7 @@ if(session.getAttribute("userID") != null){
 		</header>
 
 
-		<div class="hero overlay"
+		<div class="hero overlay" 
 			style="background-image: url('images/bg_3.jpg');">
 			<div class="container">
 				<div class="row align-items-center">
