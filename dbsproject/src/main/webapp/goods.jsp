@@ -91,8 +91,8 @@
 								<li><a href="schedule.jsp" class="nav-link">schedule</a></li>
 								<li><a href="matches.jsp" class="nav-link">results</a></li>
 								<li class="active"><a href="goods.jsp" class="nav-link">Goods</a></li>
-								<li><a href="cart.jsp" class="nav-link">Cart</a></li>
-								<li><a href="purchaselist.jsp" class="nav-link">Purchase list</a></li>
+								<li><a href="cart.jsp?userID=<%=userID %>" class="nav-link">Cart</a></li>
+								<li><a href="purchaselist.jsp?userID=<%=userID %>" class="nav-link">Purchase list</a></li>
 							</ul>
 						</nav>
 
@@ -251,7 +251,7 @@
                 </h4>
                 <p class="card-text">Price(￦) : <%=goods.getGOODSPRICE() %> </p>
                 <button type="button" class="btn btn-primary py-3 px-4 mr-3" >Buy Now</button>
-                <button type="button" class="btn btn-primary py-3 px-4 mr-3" data-toggle="modal" data-target="#loginModal">Add to Cart</button>
+                <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="alert('로그인이 필요합니다.')">Add to Cart</button>
               </div>
               <div class="card-footer">
                 <small class="text-muted">★ ★ ★ ★ ★ </small>
@@ -273,8 +273,8 @@
                   <a href="#"><%=goods.getGOODSNAME() %></a>
                 </h4>
                 <p class="card-text">Price(￦) : <%=goods.getGOODSPRICE() %> </p>
-                <button type="button" class="btn btn-primary py-3 px-4 mr-3" >Buy Now</button>
-                <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="location.href = 'cartAction.jsp?goodsID=<%=goods.getGOODSID() %>&userID=<%=userID %>'" >Add to Cart</button>
+                <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="alert('로그인이 필요합니다.')">Buy Now</button>
+                <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="alert('로그인이 필요합니다.')" >Add to Cart</button>
               </div>
               <div class="card-footer">
                 <small class="text-muted">★ ★ ★ ☆ ☆</small>
@@ -295,8 +295,8 @@
                   <a href="#"><%=goods.getGOODSNAME() %></a>
                 </h4>
                 <p class="card-text">Price(￦) : <%=goods.getGOODSPRICE() %> </p>
-                <button type="button" class="btn btn-primary py-3 px-4 mr-3" >Buy Now</button>
-                <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="location.href = 'cartAction.jsp?goodsID=<%=goods.getGOODSID() %>&userID=<%=userID %>'" >Add to Cart</button>
+                <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="alert('로그인이 필요합니다.')">Buy Now</button>
+                <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="alert('로그인이 필요합니다.')">Add to Cart</button>
               </div>
               <div class="card-footer">
                 <small class="text-muted">★ ★ ★ ★ ☆</small>
@@ -317,8 +317,8 @@
                   <a href="#"><%=goods.getGOODSNAME() %></a>
                 </h4>
                 <p class="card-text">Price(￦) : <%=goods.getGOODSPRICE() %> </p>
-                <button type="button" class="btn btn-primary py-3 px-4 mr-3" >Buy Now</button>
-                <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="location.href = 'cartAction.jsp?goodsID=<%=goods.getGOODSID() %>&userID=<%=userID %>'" >Add to Cart</button>
+                <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="alert('로그인이 필요합니다.')">Buy Now</button>
+                <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="alert('로그인이 필요합니다.')">Add to Cart</button>
               </div>
               <div class="card-footer">
                 <small class="text-muted">★ ★ ★ ★ ☆</small>
@@ -339,8 +339,8 @@
                   <a href="#"><%=goods.getGOODSNAME() %></a>
                 </h4>
                 <p class="card-text">Price(￦) : <%=goods.getGOODSPRICE() %> </p>
-                <button type="button" class="btn btn-primary py-3 px-4 mr-3" >Buy Now</button>
-                <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="location.href = 'cartAction.jsp?goodsID=<%=goods.getGOODSID() %>&userID=<%=userID %>'">Add to Cart</button>
+                <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="alert('로그인이 필요합니다.')">Buy Now</button>
+                <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="alert('로그인이 필요합니다.')">Add to Cart</button>
               </div>
               <div class="card-footer">
                 <small class="text-muted">★ ★ ★ ★ ★</small>

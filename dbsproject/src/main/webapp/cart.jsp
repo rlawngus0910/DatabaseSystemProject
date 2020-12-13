@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="kr.or.connect.dbsprojectDto.Cart"%>
 <%@ page import="kr.or.connect.dbsprojectDao.CartDao"%>
+<%@ page import="java.io.PrintWriter" %>
 <%@ page import="java.util.List"%>
 <jsp:useBean id="cart" class="kr.or.connect.dbsprojectDto.Cart" scope="page"/>
 <jsp:setProperty name="cart" property="USER"/>
@@ -45,6 +46,14 @@
 	String userID = null;
 	if(session.getAttribute("userID") != null){
 		userID = (String) session.getAttribute("userID");
+	}
+	
+	else if(userID == null){
+		PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("alert('로그인이 필요합니다.')");
+		script.println("history.back()");
+		script.println("</script>");
 	}
 
 %>

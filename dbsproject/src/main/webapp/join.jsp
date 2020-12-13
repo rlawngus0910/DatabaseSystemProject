@@ -26,12 +26,12 @@
                     <div class="ml-auto">
                       <nav class="site-navigation position-relative text-right" role="navigation">
                         <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                          <li class="active"><a href="index.html" class="nav-link">Home</a></li>
-                		  <li><a href="matches.html" class="nav-link">Players</a></li>
-                	      <li><a href="players.html" class="nav-link">Clubs</a></li>
-                	 	  <li><a href="blog.html" class="nav-link">Goods</a></li>
-                	 	  <li><a href="contact.html" class="nav-link">Ticketing</a></li>
-                	 	  <li><a href="contact.html" class="nav-link">Matches</a></li>
+                          	<li><a href="main.jsp" class="nav-link">Home</a></li>
+						  	<li><a href="players.jsp" class="nav-link">Players</a></li>
+							<li><a href="clubs.jsp" class="nav-link">Clubs</a></li>
+							<li><a href="schedule.jsp" class="nav-link">schedule</a></li>
+							<li><a href="matches.jsp" class="nav-link">results</a></li>
+							<li><a href="goods.jsp" class="nav-link">Goods</a></li>
                         </ul>
                       </nav>
           
@@ -55,7 +55,7 @@
                 <!-- ID -->
                 <div>
                     <h3 class="join_title">
-                        <label for="id">아이디</label>
+                        <label for="id">ID</label>
                     </h3>
                     <span class="box int_id">
                         <input type="text" id="id" name="userID" class="int" maxlength="20" required>
@@ -66,7 +66,7 @@
 
                 <!-- PW1 -->
                 <div>
-                    <h3 class="join_title"><label for="pswd1">비밀번호</label></h3>
+                    <h3 class="join_title"><label for="pswd1">Password</label></h3>
                     <span class="box int_pass">
                         <input type="password" id="pswd1" class="int" maxlength="20">
                         <span id="alertTxt">사용불가</span>
@@ -77,7 +77,7 @@
 
                 <!-- PW2 -->
                 <div>
-                    <h3 class="join_title"><label for="pswd2">비밀번호 재확인</label></h3>
+                    <h3 class="join_title"><label for="pswd2">Password check</label></h3>
                     <span class="box int_pass_check">
                         <input type="password" id="pswd2" name="userPassword" class="int" maxlength="20">
                         <img src="images/m_icon_check_disable.png" id="pswd2_img1" class="pswdImg">
@@ -87,7 +87,7 @@
 
                 <!-- NAME -->
                 <div>
-                    <h3 class="join_title"><label for="name">이름</label></h3>
+                    <h3 class="join_title"><label for="name">Name</label></h3>
                     <span class="box int_name">
                         <input type="text" id="name" name="userName" class="int" maxlength="20">
                     </span>
@@ -96,13 +96,13 @@
 
                 <!-- BIRTH -->
                 <div>
-                    <h3 class="join_title"><label for="yy">생년월일</label></h3>
+                    <h3 class="join_title"><label for="yy">Birth</label></h3>
 
                     <div id="bir_wrap">
                         <!-- BIRTH_YY -->
                         <div id="bir_yy">
                             <span class="box">
-                                <input type="text" id="yy" class="int" name="userBirthYear" maxlength="4" placeholder="년(4자)">
+                                <input type="text" id="yy" class="int" name="userBirthYear" maxlength="4" placeholder="Year(4자)">
                             </span>
                         </div>
 
@@ -110,7 +110,7 @@
                         <div id="bir_mm">
                             <span class="box">
                                 <select id="mm" name="userBirthMonth" class="sel">
-                                    <option>월</option>
+                                    <option>Month</option>
                                     <option value="01">1</option>
                                     <option value="02">2</option>
                                     <option value="03">3</option>
@@ -130,7 +130,7 @@
                         <!-- BIRTH_DD -->
                         <div id="bir_dd">
                             <span class="box">
-                                <input type="text" id="dd" class="int" name="userBirthDay" maxlength="2" placeholder="일">
+                                <input type="text" id="dd" class="int" name="userBirthDay" maxlength="2" placeholder="Day">
                             </span>
                         </div>
 
@@ -141,7 +141,7 @@
             
                 <!-- EMAIL -->
                 <div>
-                    <h3 class="join_title"><label for="email">이메일</label></h3>
+                    <h3 class="join_title"><label for="email">E-mail</label></h3>
                     <span class="box int_email">
                         <input type="text" id="email" class="int" name="userEmail" maxlength="100" placeholder="선택입력">
                     </span>
@@ -151,7 +151,7 @@
                 <!-- JOIN BTN-->
                 <div class="btn_area">
                     <button type="submit" id="btnJoin">
-                        <span>가입하기</span>
+                        <span>Sign up</span>
                     </button>
                 </div>
                 </form>

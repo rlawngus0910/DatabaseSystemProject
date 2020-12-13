@@ -4,6 +4,7 @@
 <%@ page import="kr.or.connect.dbsprojectDao.PurchaselistDao"%>
 <%@ page import="kr.or.connect.dbsprojectDto.Ticketing"%>
 <%@ page import="kr.or.connect.dbsprojectDao.TicketingDao"%>
+<%@ page import="java.io.PrintWriter" %>
 <%@ page import="java.util.List"%>
 <!DOCTYPE html>
 <html>
@@ -45,6 +46,13 @@
 	String userID = null;
 	if(session.getAttribute("userID") != null){
 		userID = (String) session.getAttribute("userID");
+	}
+	else if(userID == null){
+		PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("alert('로그인이 필요합니다.')");
+		script.println("history.back()");
+		script.println("</script>");
 	}
 
 %>
