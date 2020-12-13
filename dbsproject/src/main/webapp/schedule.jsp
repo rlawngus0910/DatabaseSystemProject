@@ -111,7 +111,7 @@ if(session.getAttribute("userID") != null){
 								<li><a href="matches.jsp" class="nav-link">results</a></li>
 								<li><a href="goods.jsp" class="nav-link">Goods</a></li>
 								<li><a href="cart.jsp?userID=<%=userID %>" class="nav-link">Cart</a></li>
-								<li><a href="purchaselist.jsp=<%=userID %>" class="nav-link">Purchase list</a></li>
+								<li><a href="purchaselist.jsp?userID=<%=userID %>" class="nav-link">Purchase list</a></li>
 							</ul>
 						</nav>
 
