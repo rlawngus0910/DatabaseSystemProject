@@ -19,7 +19,7 @@
                 <div class="container">
                   <div class="d-flex align-items-center">
                     <div class="site-logo">
-                      <a href="index.html">
+                      <a href="main.jsp">
                         <img src="images/Premier_League-Logo.wine.png" alt="Logo">
                       </a>
                     </div>

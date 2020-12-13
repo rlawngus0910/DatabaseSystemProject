@@ -108,7 +108,6 @@
             %>
             <p>
               <button type="button" class="btn btn-primary py-3 px-4 mr-3" onclick="location.href = 'logoutAction.jsp'">Logout</button>
-              <a href="join.jsp" class="more light">Mypage</a>
             </p>
             <%
             	}
